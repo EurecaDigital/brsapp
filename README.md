@@ -5,6 +5,6 @@ O projeto utiliza a tecnologia MEAN Full Stack
 NodeJS
 MongoDb
 ExpressFramework 
-ANgular 2+
-Angular Meterial Design 2
+Angular 2+
+Angular Material Design 2
 
