@@ -1,5 +1,5 @@
 # brsapp
-Bairro Social
+Bairro Social - Projeto da EURECA Digital
 
 O projeto utiliza a tecnologia MEAN Full Stack
 NodeJS
