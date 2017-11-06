@@ -8,11 +8,13 @@
   "angular-cli": {},
   "engines": {
     "node": "6.11.4",
-    "npm": "3.10.10"
+    "npm": ">= 4.4.0"
   },
-  "scripts": {
+    "scripts": {
     "ng": "ng",
     "build": "ng build",
+    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "npm run build",
     "start": "node dist/server/app.js",
     "predev": "tsc -p server",
     "dev": "concurrently \"mongod\" \"ng serve -pc proxy.conf.json --open\" \"tsc -w -p server\" \"nodemon dist/server/app.js\"",
