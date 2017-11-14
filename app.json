@@ -1,0 +1,17 @@
+{
+  "name": "brsapp",
+  "description": "Bairro Social",
+  "scripts": {
+    "postdeploy": "Bsoapp"
+  },
+  "env": {
+  },
+  "formation": {
+  },
+  "addons": [
+
+  ],
+  "buildpacks": [
+
+  ]
+}
