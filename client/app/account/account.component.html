@@ -3,7 +3,7 @@
 <app-toast [message]="toast.message"></app-toast>
 
 <div class="card" *ngIf="!isLoading">
-  <h4 class="card-header">Account settings</h4>
+  <h4 class="card-header">Dados da Conta</h4>
   <div class="card-block">
     <form #accountForm="ngForm" (ngSubmit)="save(user)">
       <div class="input-group">
@@ -18,12 +18,12 @@
         <span class="input-group-addon"><i class="fa fa-black-tie"></i></span>
         <select class="form-control" name="role" [(ngModel)]="user.role">
           <option value="" disabled>Role</option>
-          <option value="user">User</option>
+          <option value="user">Usuário</option>
           <option value="admin">Admin</option>
         </select>
       </div>
       <button class="btn btn-primary" type="submit" [disabled]="!accountForm.form.valid">
-        <i class="fa fa-save"></i> Save
+        <i class="fa fa-save"></i> Salvar
       </button>
     </form>
   </div>

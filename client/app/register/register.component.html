@@ -1,7 +1,7 @@
 <app-toast [message]="toast.message"></app-toast>
 
 <div class="card">
-  <h4 class="card-header">Register</h4>
+  <h4 class="card-header">Cadastre-se</h4>
   <div class="card-block">
     <form [formGroup]="registerForm" (ngSubmit)="register()">
       <div class="input-group" [ngClass]="setClassUsername()">
@@ -24,7 +24,7 @@
           <option value="admin">Admin</option>
         </select>
       </div>
-      <button class="btn btn-primary" type="submit" [disabled]="!registerForm.valid"><i class="fa fa-user-plus"></i> Register</button>
+      <button class="btn btn-primary" type="submit" [disabled]="!registerForm.valid"><i class="fa fa-user-plus"></i> Cadastrar</button>
     </form>
   </div>
 </div>
