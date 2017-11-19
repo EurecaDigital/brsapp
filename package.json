@@ -1,13 +1,13 @@
 {
-  "name": "angular2-full-stack",
+  "name": "bairroapp",
   "version": "4.2.4",
   "license": "MIT",
-  "author": "Davide Violante",
-  "description": "Angular Full Stack project built using Angular 2+, Express, Mongoose and Node.",
+  "author": "Eureca Digital",
+  "description": "compilado com  Angular 2+, Express, Mongoose and Node.",
   "angular-cli": {},
   "engines": {
-    "node": "6.11.4",
-    "npm": "3.10.10"
+    "node": "8.9.1",
+    "npm": "5.5.1"
   },
   "scripts": {
     "ng": "ng",
@@ -25,11 +25,10 @@
   "private": true,
   "dependencies": {
     "@angular/common": "^4.2.4",
-    "@angular/compiler": "^4.4.6",
+    "@angular/compiler": "^4.2.4",
     "@angular/core": "^4.2.4",
     "@angular/forms": "^4.2.4",
     "@angular/http": "^4.2.4",
-    "@angular/material": "^5.0.0-rc0",
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
@@ -41,6 +40,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "font-awesome": "^4.7.0",
+    "heroku-slugs": "^1.0.3",
     "jquery": "^3.2.1",
     "jsonwebtoken": "^8.1.0",
     "mongoose": "^4.12.1",
@@ -74,6 +74,6 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "^2.3.4"
+    "typescript": "~2.3.3"
   }
 }
