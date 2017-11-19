@@ -8,15 +8,15 @@
     <table class="table table-bordered table-striped">
       <thead class="thead-default">
         <tr>
-          <th>Nome</th>
-          <th>Idade</th>
-          <th>Peso</th>
-          <th>Ações</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Weight</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody *ngIf="cats.length === 0">
         <tr>
-          <td colspan="4">Não existem dados no Banco. Adicione um novo abaixo.</td>
+          <td colspan="4">There are no cats in the DB. Add a new cat below.</td>
         </tr>  
       </tbody>
       <tbody *ngIf="!isEditing">
@@ -25,8 +25,8 @@
           <td>{{cat.age}}</td>
           <td>{{cat.weight}}</td>
           <td>
-            <button class="btn btn-sm btn-warning" (click)="enableEditing(cat)"><i class="fa fa-pencil"></i> Editar</button> 
-            <button class="btn btn-sm btn-danger" (click)="deleteCat(cat)"><i class="fa fa-trash"></i> Deletar</button>
+            <button class="btn btn-sm btn-warning" (click)="enableEditing(cat)"><i class="fa fa-pencil"></i> Edit</button> 
+            <button class="btn btn-sm btn-danger" (click)="deleteCat(cat)"><i class="fa fa-trash"></i> Delete</button>
           </td>
         </tr>  
       </tbody>
@@ -45,7 +45,7 @@
               </div>
               <button class="btn btn-sm btn-primary" type="submit" [disabled]="!form.form.valid"><i class="fa fa-floppy-o"></i> Save</button>
             </form>
-            <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i> Cancelar</button>
+            <button class="btn btn-sm btn-warning" (click)="cancelEditing()"><i class="fa fa-times"></i> Cancel</button>
           </td>
         </tr>
       </tbody>
@@ -54,7 +54,7 @@
 </div>
 
 <div class="card" *ngIf="!isEditing">
-  <h4 class="card-header">Aducuinar novo</h4>
+  <h4 class="card-header">Add new cat</h4>
   <div class="card-block">
     <form class="form-inline" [formGroup]="addCatForm" (ngSubmit)="addCat()" style="text-align:center">
       <div class="form-group">
@@ -66,7 +66,7 @@
       <div class="form-group">
         <input class="form-control" type="number" name="weight" formControlName="weight" placeholder="Weight" step="any" min="0">
       </div>
-      <button class="btn btn-primary" type="submit" [disabled]="!addCatForm.valid"><i class="fa fa-floppy-o"></i> Adicionar</button>
+      <button class="btn btn-primary" type="submit" [disabled]="!addCatForm.valid"><i class="fa fa-floppy-o"></i> Add</button>
     </form>
   </div>
 </div>
