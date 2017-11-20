@@ -2,12 +2,12 @@
   "name": "angular2-full-stack",
   "version": "4.2.4",
   "license": "MIT",
-  "author": "Eureca Digital",
-  "description": "compilado com  Angular 2+, Express, Mongoose and Node.",
+  "author": "Davide Violante",
+  "description": "Angular Full Stack project built using Angular 2+, Express, Mongoose and Node.",
   "angular-cli": {},
   "engines": {
-    "node": "8.9.1",
-    "npm": "5.5.1"
+    "node": "6.11.4",
+    "npm": "3.10.10"
   },
   "scripts": {
     "ng": "ng",
@@ -40,7 +40,6 @@
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "font-awesome": "^4.7.0",
-    "heroku-slugs": "^1.0.3",
     "jquery": "^3.2.1",
     "jsonwebtoken": "^8.1.0",
     "mongoose": "^4.12.1",
