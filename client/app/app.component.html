@@ -2,16 +2,16 @@
   <nav class="navbar">
     <div class="nav navbar-nav">
       <a routerLink="/" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-        <i class="fa fa-home"></i> Home
+        <i class="fa fa-home"></i> 
       </a>
       <a routerLink="/cats" class="nav-item nav-link" routerLinkActive="active">
-        <i class="fa fa-list"></i> Cats
+        <i class="fa fa-list"></i> Cadastro
       </a>
       <a routerLink="/login" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
-        <i class="fa fa-sign-in"></i> Login
+        <i class="fa fa-sign-in"></i> Entrar
       </a>
       <a routerLink="/register" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
-        <i class="fa fa-user-plus"></i> Register
+        <i class="fa fa-user-plus"></i> Registrar
       </a>
       <a routerLink="/account" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
         <i class="fa fa-user"></i> Account ({{auth.currentUser.username}})
@@ -20,9 +20,9 @@
         <i class="fa fa-lock"></i> Admin
       </a>
       <a routerLink="/logout" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
-        <i class="fa fa-sign-out"></i> Logout
+        <i class="fa fa-sign-out"></i> Sair
       </a>
-      <a routerLink="/logout" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+      <a routerLink="/logout" class="nav-item nav-link" routerLinkActive="active">
         <i class="fa fa-cog"></i> 
       </a>
     </div>
