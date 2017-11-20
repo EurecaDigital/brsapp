@@ -5,11 +5,6 @@ body {
   margin-bottom: 10px;
 }
 
-.navbar nav  {
-  background-color: #97550B;
-  color: #FFFFFF;
-}
-
 .sidebar-nav {
   padding: 9px 0;
 }
@@ -32,6 +27,8 @@ body {
 
 .nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
   margin-top: 0;
+  background-color: #97550B;
+  color: #FFFFFF;
 }
 
 .navbar .sub-menu:before {
@@ -81,10 +78,18 @@ body {
   display: block;
 }
 
-.nav-tabs .dropdown-menu,
+.nav-tabs .navbar .nav .navbar-nav  .dropdown-menu,
 .nav-pills .dropdown-menu,
 .navbar .dropdown-menu {
   margin-top: 0;
+  background-color: #97550B;
+  color: #FFFFFF;
+}
+
+.navbar  {
+  margin-top: 0;
+  background-color: #97550B;
+  color: #FFFFFF;
 }
 
 .navbar .sub-menu:before {
@@ -94,6 +99,8 @@ body {
   border-top: 7px solid transparent;
   left: -7px;
   top: 10px;
+  background-color: #97550B;
+  color: #FFFFFF;
 
 }
 
@@ -105,4 +112,6 @@ body {
   left: 10px;
   top: 11px;
   left: -6px;
+  background-color: #97550B;
+  color: #FFFFFF;
 }
