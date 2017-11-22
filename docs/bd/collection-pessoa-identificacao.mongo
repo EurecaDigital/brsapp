@@ -1,0 +1,62 @@
+{
+    "pessoaDestino" : "all",
+    "tipo" : "IDENTIFICACAO",
+
+    "hashPessoa": "",
+
+    "nome" : "Luis Claudio",
+    "nickname" : "",
+
+    "idObjetoProjetoOrigem": "1",
+    "hashObjetoProjetoOrigem": "1",
+
+    "tipoPessoa": "FISICA/JURIDICA",
+
+    "documento_identificacao_desc": "CPF_CNPJ_MEI_CRECI/RJ_SUSEP",
+    "documento_identificacao_valor": "02252274794",    
+
+    "pessoa_fisica": [
+        {                  
+         "data_nasc": "21/08/1973",
+         "sexo": "Masculino",
+         "urlAvatarPerfil": ""
+        }
+    ],
+
+    "pessoa_juridica": [
+        {
+         "x_inscricao_municipal": "",
+         "x_inscricao_estadual": "",
+         "x_regime_tributacao": "simples, lucro real, lucro presumido",
+         "data_abertura_funcionamento": "",
+         "urlLogoDesktop": "",
+         "urlLogoMobile": "",
+         "urlIcon": ""         
+        }
+    ],
+
+        
+    "statusPessoaInProjetos": [ 
+        { "idObjetoProjeto": "", "tipoOrigem": "comum", "status": "ativo" },
+        { "idObjetoProjeto": "1", "tipoOrigem": "particular", "status": "morador" }
+    
+    ],    
+
+    "tipoPessoaInProjetos": [
+        {"idObjetoProjeto": "1", "tipoPessoa": "fisica", "classe": "amigo_do_bairro, colaborador, parceiro, morador, usuario"},
+        {"idObjetoProjeto": "1", "tipoPessoa": "juridica", "classe": "anunciante, parceiro, empresa_pj, empresa_pf, empresa_azt, empresa_azt_pj, empresa_azt_pf, parceiro"}
+    ],
+
+    "documentosPessoa": [ 
+        { "idObjetoProjeto": "3", "tipoOrigem": "particular", 
+          "descricao": "CNH", "valor": "...", "validade": "", 
+          "conteudo1": "valor1", "conteudo2": "valor2", "conteudo3": "valor3"  
+        }
+    ],    
+
+    "loginPessoa": [ 
+        {"idObjetoProjeto": "", "tipoLogin": "numero_celular", "login": "21964253379", "senha": "", "senha_lembrete": ""}
+    ]
+    
+
+}

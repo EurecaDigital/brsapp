@@ -1,0 +1,18 @@
+{
+    "projetoDestino" : "all",
+    "tipo" : "ESTATISTICA",
+    "idProjeto" : "BSocial",
+    "nomeProjeto" : "BAIRRO Social",
+    "qtde_empresas_usuarias" : "",
+    "qtde_pessoas_usuarios" : "",
+    "qtde_mobile" : "",
+    "qtde_desktop" : "",
+    "audiencia" : [ 
+        {
+            "views" : "1", 
+            "acessos" : "1",
+            "indicacoes" : "1",
+            "downloads" : "1"
+        }
+    ]
+}

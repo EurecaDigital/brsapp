@@ -1,0 +1,20 @@
+{
+    "projetoDestino" : "all",
+    "tipo" : "TABELA_PRECOS",
+    "codigoProjeto" : "BSocial",
+    "nomeProjeto" : "BAIRRO Social",
+    "plano" : [ 
+        {
+            "titulo" : "Plano Básico",
+            "valorAdesao" : "20.00",
+            "valorMensal" : "20.00",
+            "dias" : 30
+        }, 
+        {
+            "titulo" : "Plano Promocional",
+            "valorAdesao" : "20.00",
+            "valorMensal" : "20.00",
+            "dias" : 30
+        }
+    ]
+}

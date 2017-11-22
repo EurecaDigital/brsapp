@@ -1,0 +1,47 @@
+{
+    "projetoDestino" : "all",
+    "tipo" : "CONTEUDO",
+    "idProjeto" : "1",
+    "nomeProjeto" : "BAIRRO Social",
+    "idObjetoPessoaOrigem" : "",
+    "objetoOrigem" : "",
+    "idObjetoOrigem" : "",
+    "sessao" : "informativo_website",
+    "titulo" : "O que é o BAIRRO Social?",
+    "resumo" : "O Aplicativo Bairro Social é um guia de produtos e serviços de bairro.",
+    "descricao" : "O aplicativo tem como objetivos principais dar visibilidade a tudo que funciona ao seu redor, assim como permitir que nós usuários tenhamos acesso a dias e horários de funcionamento e produtos e serviços promocionais. ",
+    "fonte" : "",
+    "arquivos" : [ 
+        {
+            "tipo" : "imagem",
+            "autor" : "",
+            "url" : "",
+            "descricao" : ""
+        }, 
+        {
+            "tipo" : "video",
+            "autor" : "",
+            "url" : "",
+            "descricao" : ""
+        }
+    ],
+    "objetoDestino" : [ 
+        {
+            "objeto" : "website",
+            "idObjeto" : "1"
+        }, 
+        {
+            "objeto" : "app",
+            "idObjeto" : "434"
+        }
+    ],
+    "keywords" : [ 
+        "funcionamento", 
+        "uso", 
+        "vender", 
+        "comprar"
+    ],
+    "dataHoraRegistro" : "",
+    "dataHoraPublicacao" : "",
+    "dataHoraPublicacaoLimite" : ""
+}

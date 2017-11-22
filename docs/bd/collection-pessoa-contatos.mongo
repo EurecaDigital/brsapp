@@ -1,0 +1,138 @@
+{
+    "pessoaDestino" : "all",
+    "tipo" : "CONTATO",
+ 
+    "idObjetoPessoaOrigem": "1",
+
+    "nome" : "Luis Claudio",
+    "nickname" : "",
+    
+
+    "endereco": [
+        {
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "idBairro": "",
+            "idCidade": "",
+            "tipoEndereco": "comercial_residencial_cobranca",            
+            "situacao": "ativo_inativo",
+            "classificacao": "principal_secundario",
+            "cep": "24020320",
+            "endereco": "Rua Dr Borman",
+            "numero": "23",
+            "complemento": "sala 405",
+            "bairro": "Centro",
+            "cidade": "Niterói",
+            "uf": "RJ",
+            "pontoReferencia": "",
+            "observacao": "",
+            "latitude": "",
+            "lontitude": "",
+
+            "obs": "",
+            "dataHoraAtualizacao": "01/08/2017 10:30",
+            "dataHoraReg": "01/08/2017 10:30"
+        }
+    ],
+
+    "telefone": [
+        {
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "tipoTelefone": { "celular_fixo", "principal_secundario", "comercial_residencial" },
+            "classificacao": "principal_secundario",
+
+            "uso": [ 
+                    { "tipo": "whatsapp", "disponibilidade": "simPublico_particular" },
+                    { "tipo": "sms", "disponibilidade": "simPublico_particular" },
+                    { "tipo": "email", "disponibilidade": "simPublico_particular" }
+            
+            ],
+            "situacao": "ativo_inativo",
+            "ordem_exibicao": "", 
+            "operadora": [
+                { "nome": "claro_oi_nextel", "url_icon": ""}
+            ],
+            "ddi": "55",
+            "ddd": "21",
+            "numero": "964253379",
+            "telefone_completo": "5521964253379",
+
+            "audiencia": [
+                { "tipo": "celular", "tipoAudiencia": "view_acesso_contato", "qtde": "" },
+                { "tipo": "whatsapp", "tipoAudiencia": "view_acesso_contato", "qtde": "" }
+            ],
+
+            "audienciaRegistro": [
+                { "tipo": "celular", "tipoAudiencia": "view_acesso_contato", "dataHoraReg": "" },
+                { "tipo": "whatsapp", "tipoAudiencia": "view_acesso_contato", "dataHoraReg": "" }
+            ],
+
+            "obs": "",
+            "dataHoraAtualizacao": "01/08/2017 10:30",
+            "dataHoraReg": "01/08/2017 10:30"
+        }
+
+    ],
+
+
+    "email": [
+        {
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "tipoEmail": { "principal", "secundario", "conta_google" },
+            "classificacao": "principal_secundario",
+
+            "uso": [ 
+                    { "tipo": "app", "disponibilidade": "simPublico_particular" },
+                    { "tipo": "website", "disponibilidade": "simPublico_particular" },
+                    { "tipo": "sistema", "disponibilidade": "simPublico_particular" }
+            
+            ],
+            "situacao": "ativo_inativo",
+            "ordem_exibicao": "", 
+
+            "email": "azimutt.inet@gmail.com",
+
+            "audiencia": [
+                { "tipoAudiencia": "view_acesso_contato", "qtde": "" },
+                { "tipoAudiencia": "view_acesso_contato", "qtde": "" }
+            ],
+
+            "audienciaRegistro": [
+                { "tipoAudiencia": "view_acesso_contato", "dataHoraReg": "" },
+                { "tipoAudiencia": "view_acesso_contato", "dataHoraReg": "" }
+            ],
+
+            "obs": "",
+            "dataHoraAtualizacao": "01/08/2017 10:30",
+            "dataHoraReg": "01/08/2017 10:30"
+        }
+
+    ],
+    
+    "social": [
+        {
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "tipoSocial": { "facebook", "twitter", "google+", "instagram", "youtube" },
+            
+            "situacao": "ativo_inativo",
+            "ordem_exibicao": "", 
+
+            "url": "",
+
+            "audienciaRegistro": [
+                { "tipoAudiencia": "view_acesso_contato", "dataHoraReg": "" },
+                { "tipoAudiencia": "view_acesso_contato", "dataHoraReg": "" }
+            ],
+
+            "obs": "",
+            "dataHoraAtualizacao": "01/08/2017 10:30",
+            "dataHoraReg": "01/08/2017 10:30"
+        }
+
+    ]
+
+
+}

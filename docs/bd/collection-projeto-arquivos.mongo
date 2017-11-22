@@ -1,0 +1,14 @@
+{
+    "projetoDestino" : "all",
+    "tipo" : "ARQUIVOS",
+    "idProjeto" : "1",
+    "objetoOrigem" : "conteudo",
+    "idObjetoOrigem" : "",
+    "dataHoraRegistro" : "",
+    "dataHoraUltimaAtualizacao" : "",
+    "tipoMidia" : "",
+    "url" : "",
+    "tamanho" : "",
+    "autor" : "",
+    "descricao" : ""
+}
