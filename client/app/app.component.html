@@ -1,110 +1,47 @@
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-</head>
-
-
 <div class="page-header">
 
-  <nav class="navbar navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
+    <nav class="navbar navbar-custom">
+        <!-- Navbar content -->
 
-      <div class="navbar-header">
-
-        <a class="navbar-brand" href="#">
-          <img src="/assets/Logo_Bairro_Social.png" alt="Bairro Social">
-        </a>
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav">
-          <li class="active">
-            <a routerLink="/" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-              <i class="fa fa-home"></i>
-            </a>
-          </li>
-
-          <!--li class="dropdown">
-            <a href="#" data-toggle="dropdown" class="dropdown-toggle fa fa-link"> Cadastros
-            </a>
-            <ul class="dropdown-menu" id="menu1">
-              <li>
-                <a href="#"> Pessoas
-                  <i class="icon-arrow-right"></i>
+        <div class="nav navbar-nav">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/nav_logo_Bairro_Social.png" alt="Bairro Social">
                 </a>
-                <ul class="dropdown-menu sub-menu">
-                  <li>
-                    <a routerLink="/cats" class="nav-item nav-link" routerLinkActive="active">
-                      <i class="fa fa-list"></i> Pessoa Física
-                    </a>
-                  </li>
-                  <li>
-                    <a routerLink="/cats" class="nav-item nav-link" routerLinkActive="active">
-                      <i class="fa fa-list"></i> Pessoa Jurídica
-                    </a>
-                  </li>
-
-                </ul>
-              </li>
-
-            </ul>
-          </li-->
-
-          <li>
+            <a routerLink="/" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+              <i class="fa fa-home"></i> Home
+            </a>
+            <a routerLink="/cats" class="nav-item nav-link" routerLinkActive="active">
+              <i class="fa fa-list"></i> Cadastro
+            </a>
+            <a routerLink="/login" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
+              <i class="fa fa-sign-in"></i> Entrar
+            </a>
+            <a routerLink="/register" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
+              <i class="fa fa-user-plus"></i> Registrar
+            </a>
+            <a routerLink="/account" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
+              <i class="fa fa-user"></i> Account ({{auth.currentUser.username}})
+            </a>
             <a routerLink="/admin" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
               <i class="fa fa-lock"></i> Admin
             </a>
-          </li>
-
-          <li>
-            <a routerLink="/register" class="nav-item nav-link" routerLinkActive="active">
-              <i class="fa fa-user-plus"></i> Cadastrar
-            </a>
-          </li>
-
-          <li>
-            <a routerLink="/account" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
-              <i class="fa fa-user"></i> Conta ({{auth.currentUser.username}})
-            </a>
-          </li>
-        </ul>
-
-        <ul class="nav navbar-nav navbar-right">
-
-          <li>
-            <a routerLink="/login" class="nav-item nav-link" routerLinkActive="active">
-              <i class="fa fa-sign-in"></i> Acesso
-            </a>
-          </li>
-          <li>
             <a routerLink="/logout" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
               <i class="fa fa-sign-out"></i> Sair
             </a>
-          </li>
-        </ul>
+          </div>
+      </nav>
+     
+   
+      
+ 
 
-      </div>
-    </div>
-  </nav>
+  <!--/.navbar -->
+  <!-- Page Content -->
+  <!-- /.container -->
+  <div class="container">
 
-</div>
+    <router-outlet></router-outlet>
 
+  </div>
 
-<div class="container">
-
-  <router-outlet></router-outlet>
-
-</div>
-
-<footer class="navbar-fixed-bottom"> 2017 Bairro Social V0.1. </footer>
+  <footer class="navbar-fixed-bottom"> 2017 Bairro Social V0.1. </footer>

@@ -3,7 +3,7 @@
 <app-toast [message]="toast.message"></app-toast>
 
 <div class="card" *ngIf="!isLoading">
-  <h4 class="card-header">Configuração</h4>
+  <h4 class="card-header">Account settings</h4>
   <div class="card-block">
     <form #accountForm="ngForm" (ngSubmit)="save(user)">
       <div class="input-group">
@@ -23,7 +23,7 @@
         </select>
       </div>
       <button class="btn btn-primary" type="submit" [disabled]="!accountForm.form.valid">
-        <i class="fa fa-save"></i> Salvar
+        <i class="fa fa-save"></i> Save
       </button>
     </form>
   </div>

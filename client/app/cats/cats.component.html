@@ -8,15 +8,15 @@
     <table class="table table-bordered table-striped">
       <thead class="thead-default">
         <tr>
-          <th>Nome</th>
-          <th>Idade</th>
-          <th>Peso</th>
-          <th>Ações</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Weight</th>
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody *ngIf="cats.length === 0">
         <tr>
-          <td colspan="4">Não existem dados cadastrados. Adicione um novo abaixo.</td>
+          <td colspan="4">There are no cats in the DB. Add a new cat below.</td>
         </tr>  
       </tbody>
       <tbody *ngIf="!isEditing">
@@ -25,8 +25,8 @@
           <td>{{cat.age}}</td>
           <td>{{cat.weight}}</td>
           <td>
-            <button class="btn btn-sm btn-warning" (click)="enableEditing(cat)"><i class="fa fa-pencil"></i> Editar</button> 
-            <button class="btn btn-sm btn-danger" (click)="deleteCat(cat)"><i class="fa fa-trash"></i> Deletar</button>
+            <button class="btn btn-sm btn-warning" (click)="enableEditing(cat)"><i class="fa fa-pencil"></i> Edit</button> 
+            <button class="btn btn-sm btn-danger" (click)="deleteCat(cat)"><i class="fa fa-trash"></i> Delete</button>
           </td>
         </tr>  
       </tbody>
