@@ -1,0 +1,28 @@
+{
+    "projetoDestino" : "all",
+    "tipo" : "FINANCEIRO_À_CONCLUIR",
+    "idProjeto" : "1",
+    "hashProjeto" : "3Ba45ir6!@",
+    "idObjetoPessoaOrigem" : "...",
+    "ObjetoTabelaPreco" : [ 
+        {
+            "plano" : "",
+            "idObjetoTabelaPreco" : "1",
+            "valor" : ""
+        }
+    ],
+    "lancamento" : [ 
+        {
+            "tipo" : "boleto",
+            "valor" : "20.00",
+            "dataVencimento" : ""
+        }
+    ],
+    "pagamento" : [ 
+        {
+            "local" : "banco",
+            "valor_pago" : "20.00",
+            "data_pagamento" : ""
+        }
+    ]
+}

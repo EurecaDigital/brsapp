@@ -1,0 +1,150 @@
+{
+    "pessoaDestino" : "all",
+    "tipo" : "CONTATO",    
+    "subTipo": "ENDERECO, TELEFONE, EMAIL, SOCIAL"
+ 
+    "idObjetoPessoa": "1",
+
+    "nome" : "Luis Claudio",
+    "nickname" : "",
+    
+
+    "uf":[ "RJ", "SP", "MG", "..."],
+    "cidade": [
+        { "idCidade": "1",  "uf": "RJ", "descricao": "São Gonçalo"}
+    ],
+    "bairro": [
+        { "idBairro": "1",  "idCidade": "1", "descricao": "Mutuá" }
+    ]
+
+
+
+    "endereco": [
+        {            
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "idBairro": "",
+            "idCidade": "",
+            "tipoEndereco": "COMERCIAL, RESIDENCIAL, COBRANCA",            
+            "status": "ATIVO, INATIVO",
+            "classificacao": "PRINCIPAL, SECUNDARIO",
+            "cep": "24020320",
+            "logradouro": "Rua Dr Borman",
+            "numero": "23",
+            "complemento": "sala 405",
+            "bairro": "Centro",
+            "cidade": "Niterói",
+            "uf": "RJ",
+            "pontoReferencia": "",
+            "observacao": "",
+            "latitude": "",
+            "lontitude": "",
+
+            "obs": "",
+            "dataHoraAtualizacao": "01/08/2017 10:30",
+            "dataHoraReg": "01/08/2017 10:30"
+        }
+    ],
+
+    "telefone": [
+        {
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "tipoTelefone": { "CELULAR, FIXO", "COMERCIAL, RESIDENCIAL" },
+            "classificacao": "PRINCIPAL, SECUNDARIO",
+
+            "uso": [ 
+                    { "tipo": "WHATSAPP", "disponibilidade": "simPUBLICO, usoPARTICULAR" },
+                    { "tipo": "SMS", "disponibilidade": "simPUBLICO, usoPARTICULAR" },
+                    { "tipo": "EMAIL", "disponibilidade": "simPUBLICO, usoPARTICULAR" }
+            
+            ],
+            "situacao": "ATIVO, INATIVO",
+            "ordem_exibicao": "", 
+            "operadora": [
+                { "nome": "CLARO, OI, NEXTEL", "url_icon": ""}
+            ],
+            "ddi": "55",
+            "ddd": "21",
+            "numero": "964253379",
+            "telefone_completo": "5521964253379",
+
+            "audiencia": [
+                { "tipo": "CELULAR", "tipoAudiencia": "VIEW, ACESSO, CONTATO", "qtde": "" },
+                { "tipo": "WHATSAPP", "tipoAudiencia": "VIEW, ACESSO, CONTATO", "qtde": "" }
+            ],
+
+            "audienciaRegistro": [
+                { "tipo": "CELULAR", "tipoAudiencia": "VIEW, ACESSO, CONTATO", "dataHoraReg": "" },
+                { "tipo": "WHATSAPP", "tipoAudiencia": "VIEW, ACESSO, CONTATO", "dataHoraReg": "" }
+            ],
+
+            "obs": "",
+            "dataHoraAtualizacao": "01/08/2017 10:30",
+            "dataHoraReg": "01/08/2017 10:30"
+        }
+
+    ],
+
+
+    "email": [
+        {
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "tipoEmail": { "PRINCIPAL", "SECUNDARIO", "CONTA_GMAIL" },
+            "classificacao": "PRINCIPAL", "SECUNDARIO",
+            "status": {"ATIVO", "INATIVO"}
+
+            "uso": [ 
+                    { "tipo": "app", "disponibilidade": "simPublico_particular" },
+                    { "tipo": "website", "disponibilidade": "simPublico_particular" },
+                    { "tipo": "sistema", "disponibilidade": "simPublico_particular" }
+            
+            ],
+            "situacao": "ativo_inativo",
+            "ordem_exibicao": "", 
+
+            "email": "azimutt.inet@gmail.com",
+
+            "audiencia": [
+                { "tipoAudiencia": "view_acesso_contato", "qtde": "" },
+                { "tipoAudiencia": "view_acesso_contato", "qtde": "" }
+            ],
+
+            "audienciaRegistro": [
+                { "tipoAudiencia": "view_acesso_contato", "dataHoraReg": "" },
+                { "tipoAudiencia": "view_acesso_contato", "dataHoraReg": "" }
+            ],
+
+            "obs": "",
+            "dataHoraAtualizacao": "01/08/2017 10:30",
+            "dataHoraReg": "01/08/2017 10:30"
+        }
+
+    ],
+    
+    "social": [
+        {
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "tipoSocial": { "facebook", "twitter", "google+", "instagram", "youtube" },
+            
+            "situacao": "ativo_inativo",
+            "ordem_exibicao": "", 
+
+            "url": "",
+
+            "audienciaRegistro": [
+                { "tipoAudiencia": "view_acesso_contato", "dataHoraReg": "" },
+                { "tipoAudiencia": "view_acesso_contato", "dataHoraReg": "" }
+            ],
+
+            "obs": "",
+            "dataHoraAtualizacao": "01/08/2017 10:30",
+            "dataHoraReg": "01/08/2017 10:30"
+        }
+
+    ]
+
+
+}

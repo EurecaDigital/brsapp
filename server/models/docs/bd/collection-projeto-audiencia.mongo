@@ -1,0 +1,14 @@
+{ 
+    "projetoDestino" : "all",
+    "tipo" : "AUDIENCIA",
+    "idProjeto" : "1",
+    "objetoOrigem" : "conteudo",
+    "idObjetoOrigem" : "",
+    "dataUltimaAtualizacao" : "",
+    "views" : 0,
+    "acessos" : 0,
+    "share" : 0,
+    "indicacoes" : 0,
+    "emails" : 0,
+    "redeSocial" : 0
+}

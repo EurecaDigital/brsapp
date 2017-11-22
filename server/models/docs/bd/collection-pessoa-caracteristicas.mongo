@@ -1,0 +1,72 @@
+{
+    "tipo" : "CARACTERISTICAS",
+ 
+    "idObjetoPessoaOrigem": "1",
+
+    "nome" : "Luis Claudio",
+    "nickname" : "",
+    "telefone_completo": "5521964253379",
+    
+
+    "identificacao_grupo_pessoas": [
+        {
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "cep": "24020320",
+            "numero": "23",
+            "complemento": "sala 405",
+            "telefone_completo": "5521964253372"
+        }
+    ]
+
+    "interesses": [
+        {
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "grupo": "animais de estimacao"
+            "conteudo": "cachorro",
+            "valor": "2",
+            "dataHoraReg": "01/08/2017 10:30"
+        },
+        {
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "grupo": "pessoas_que_moram_na_residencia"
+            "conteudo": "filho ate 10 anos",
+            "valor": "1",
+            "dataHoraReg": "01/08/2017 10:30"
+        },        
+        {
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "grupo": "pessoas_que_moram_na_residencia"
+            "conteudo": "idosos",
+            "valor": "1",
+            "dataHoraReg": "01/08/2017 10:30"
+        },        
+        {
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "grupo": "veiculos"
+            "conteudo": "carro ate ano 2000",
+            "valor": "1",
+            "dataHoraReg": "01/08/2017 10:30"
+        },        
+        {
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "grupo": "obras_reformas"
+            "conteudo": "pretende fazer obras ou reformas nos próximos meses",
+            "valor": "6",
+            "dataHoraReg": "01/08/2017 10:30"
+        },        
+        {
+            "idProjeto": "1",
+            "idObjetoPessoaPerfil": "1",
+            "grupo": "area_profissional"
+            "conteudo": "profissão",
+            "valor": "contabilidade",
+            "dataHoraReg": "01/08/2017 10:30"
+        }        
+    ]
+}

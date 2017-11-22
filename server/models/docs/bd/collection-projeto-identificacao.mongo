@@ -1,0 +1,34 @@
+{
+    "projetoDestino" : "ALL",
+    "tipo" : "IDENTIFICACAO",
+    "idProjeto" : "1",
+    "hashProjeto" : "2Ba34ir5!@",
+    "nome" : "BAIRRO Social",
+    "assinatura" : "Produtos e serviços em suas mãos!",
+    "imagens" : [ 
+        {
+            "logo_mobile" : "../arquivos_set/logo_mobile.png",
+            "logo_desktop" : "../arquivos_set/logo_mobile.png"
+        }
+    ],
+    "url_website" : "https://bairrosocial.com.br",
+    "url_mobile" : "https://bairrosocial.com.br",
+    "url_app" : "",
+    "versao" : "0.1",
+    "versaoUltimaAtualizacao" : "",
+    "resumo" : "Este aplicativo é um Guia Online de Produtos e Serviços do seu bairro.",
+    "descricao" : "",
+    "keywords" : [ 
+        "produtos", 
+        "servicos", 
+        "guia", 
+        "anuncio", 
+        "comercio"
+    ],
+    "configuracao" : [ 
+        {
+            "idLayout" : "1",
+            "idCss" : "1"
+        }
+    ]
+}
