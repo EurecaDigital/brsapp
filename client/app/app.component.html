@@ -7,7 +7,7 @@
       <mat-sidenav #sidenav>
         <mat-list>
           <mat-list-item [routerLink]="['/']"> Dashboard</mat-list-item>
-          <mat-list-item [routerLink]="['/login']"> Colaboradores</mat-list-item>
+          <mat-list-item routerLink="/projetos" routerLinkActive="active" Colaboradores</mat-list-item>
           <mat-list-item [routerLink]="['/login']"> Anunciantes</mat-list-item>
           <mat-list-item [routerLink]="['/login']"> Anúncios</mat-list-item>
           <mat-list-item [routerLink]="['/login']"> Usuários</mat-list-item>
@@ -91,10 +91,13 @@
           </mat-toolbar>
         </header>
         <main class="content">
-          <router-outlet></router-outlet>
+          <mat-card-content>
+            <router-outlet></router-outlet>
+          </mat-card-content>
+
         </main>
         <footer>
-           <span style="text-align: center">&nbsp; 2017 Bairro Social V/span>0.1.</span>
+          <span style="text-align: center">&nbsp; 2017 Bairro Social V/span>0.1.</span>
         </footer>
       </div>
     </mat-sidenav-container>
@@ -107,7 +110,7 @@
 
 
 
-  <div class="container">
+  <!--div class="container">
     <div fxLayout="row" fxLayoutAlign="start center" class="content">
       <div class="blocks" fxFlex="20%">1</div>
       <div class="blocks" fxFlex="60%">2</div>
@@ -133,4 +136,4 @@
       <div class="blocks" fxFlex> I'm above on mobile, and to the left on larger devices. </div>
       <div class="blocks" fxFlex> I'm below on mobile, and to the right on larger devices. </div>
     </div>
-  </div>
+  </div-->
