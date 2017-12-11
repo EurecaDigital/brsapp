@@ -1,0 +1,151 @@
+<div class="page-header">
+  :
+  <div class="example-container">
+    <!--[class.example-is-mobile]="mobileQuery.matches"-->
+    <mat-toolbar color="accent">
+      <mat-toolbar-row>
+
+        <button mat-icon-button (click)="snav.toggle()" fxHide="false" fxHide.gt-sm>
+          <mat-icon>menu</mat-icon>
+        </button>
+
+        0
+        <!--mat-sidenav-container style="width: 250px;background: #97550B" >
+          <mat-sidenav #snav layout="column" fxHide="false" mat-component-id="left"  
+          opened="false"  [mode]="mode"
+          [fixedInViewport]="fixed" [fixedTopGap]="fixedTop" [fixedBottomGap]="fixedBottom">
+              <section>
+                  <a href="#">
+                    <img src="/assets/nav_logo_Bairro_Social.png" alt="Bairro Social">
+                  </a>
+                  Bairro Social
+                </section>
+          </mat-sidenav>
+          <mat-sidenav #end position="end"
+          [fixedInViewport]="fixed" [fixedTopGap]="fixedTop" [fixedBottomGap]="fixedBottom">End</mat-sidenav>
+          <section>
+            <a href="#">
+              <img src="/assets/nav_logo_Bairro_Social.png" alt="Bairro Social">
+            </a>
+          </section>
+        </mat-sidenav-container-->
+
+
+
+
+        <!--mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+          <mat-icon>menu</mat-icon>
+        </mat-button-->
+
+
+
+        <mat-menu #appMenu="matMenu" x-position="before" #menu="matMenu">
+          <div>
+            <button mat-icon-button rocuterLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+              <mat-icon class="fa fa-home" mat-24></mat-icon>
+            </button>
+          </div>
+          <div>
+            <button mat-icon-button routerLink="/login" routerLinkActive="active">
+              <mat-icon class="fa fa-sign-in"></mat-icon>
+            </button>
+          </div>
+
+        </mat-menu>
+
+        <!--button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon>more_vert</mat-icon>
+      </button-->
+
+        <span class="example-spacer"></span>
+        <span class="demo-fill-remaining"></span>
+
+        <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+          <section>
+
+            <button mat-icon-button rocuterLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+              <mat-icon class="fa fa-home"></mat-icon>
+            </button>
+
+            <button mat-icon-button routerLink="/login" routerLinkActive="active" *ngIf="!auth.loggedIn">
+              <mat-icon class="fa fa-sign-in"></mat-icon>
+            </button>
+
+            <button mat-icon-button id="header_menu" [matMenuTriggerFor]="appMenu">
+              <mat-icon class="fa fa-cog"></mat-icon>
+            </button>
+
+          </section>
+        </div>
+
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+
+  <!--/.toolbar -->
+
+  <mat-menu #appMenu="matMenu" yPosition="below" class="header_menu">
+    <div>
+      <button mat-icon-button routerLink="/projetos" routerLinkActive="active">
+        <mat-icon class="fa fa-file"></mat-icon> Projetos
+      </button>
+    </div>
+    <div>
+      <button mat-icon-button routerLink="/register" routerLinkActive="active" *ngIf="!auth.loggedIn">
+        <mat-icon class="fa fa-user"></mat-icon> Novo
+      </button>
+    </div>
+    <div>
+      <button mat-icon-button routerLink="/admin" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
+        <mat-icon class="fa fa-lock"></mat-icon> Admin
+      </button>
+    </div>
+    <div>
+      <button mat-icon-button routerLink="/logout" routerLinkActive="active" *ngIf="auth.loggedIn">
+        <mat-icon class="fa fa-sign-out"></mat-icon> Sair
+      </button>
+    </div>
+  </mat-menu>
+
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="start center" class="content">
+      <div class="blocks" fxFlex="20%">1</div>
+      <div class="blocks" fxFlex="60%">2</div>
+      <div class="blocks" fxFlex>3</div>
+    </div>
+  </div>
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="space-around center" class="content">
+      <div class="blocks">1</div>
+      <div class="blocks">2</div>
+      <div class="blocks">3</div>
+    </div>
+  </div>
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="begin center" class="content">
+      <div class="blocks">1</div>
+      <div class="blocks">2</div>
+      <div class="blocks">3</div>
+    </div>
+  </div>
+  <div class="container">
+    <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex class="contentResp">
+      <div class="blocks" fxFlex> I'm above on mobile, and to the left on larger devices. </div>
+      <div class="blocks" fxFlex> I'm below on mobile, and to the right on larger devices. </div>
+    </div>
+  </div>
+
+  <mat-card-content>
+    <p>
+      <button mat-icon-button routerLink="/account" routerLinkActive="active" *ngIf="auth.loggedIn">
+        <mat-icon class="fa fa-user"></mat-icon>
+        Login: ({{auth.currentUser.username}})
+      </button>
+    </p>
+    <p>
+      <router-outlet></router-outlet>
+    </p>
+  </mat-card-content>
+
+
+  <footer class="navbar-fixed-bottom"> 2017 Bairro Social V0.1. </footer>
