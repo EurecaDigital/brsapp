@@ -1,35 +1,24 @@
 {
     "pessoaDestino" : "all",
-    "tipo" : "CONTATO",    
-    "subTipo": "ENDERECO, TELEFONE, EMAIL, SOCIAL"
+    "tipo" : "CONTATO",
  
-    "idObjetoPessoa": "1",
+    "idObjetoPessoaOrigem": "1",
 
     "nome" : "Luis Claudio",
     "nickname" : "",
     
 
-    "uf":[ "RJ", "SP", "MG", "..."],
-    "cidade": [
-        { "idCidade": "1",  "uf": "RJ", "descricao": "São Gonçalo"}
-    ],
-    "bairro": [
-        { "idBairro": "1",  "idCidade": "1", "descricao": "Mutuá" }
-    ]
-
-
-
     "endereco": [
-        {            
+        {
             "idProjeto": "1",
             "idObjetoPessoaPerfil": "1",
             "idBairro": "",
             "idCidade": "",
-            "tipoEndereco": "COMERCIAL, RESIDENCIAL, COBRANCA",            
-            "status": "ATIVO, INATIVO",
-            "classificacao": "PRINCIPAL, SECUNDARIO",
+            "tipoEndereco": "comercial_residencial_cobranca",            
+            "situacao": "ativo_inativo",
+            "classificacao": "principal_secundario",
             "cep": "24020320",
-            "logradouro": "Rua Dr Borman",
+            "endereco": "Rua Dr Borman",
             "numero": "23",
             "complemento": "sala 405",
             "bairro": "Centro",
@@ -50,19 +39,19 @@
         {
             "idProjeto": "1",
             "idObjetoPessoaPerfil": "1",
-            "tipoTelefone": { "CELULAR, FIXO", "COMERCIAL, RESIDENCIAL" },
-            "classificacao": "PRINCIPAL, SECUNDARIO",
+            "tipoTelefone": { "celular_fixo", "principal_secundario", "comercial_residencial" },
+            "classificacao": "principal_secundario",
 
             "uso": [ 
-                    { "tipo": "WHATSAPP", "disponibilidade": "simPUBLICO, usoPARTICULAR" },
-                    { "tipo": "SMS", "disponibilidade": "simPUBLICO, usoPARTICULAR" },
-                    { "tipo": "EMAIL", "disponibilidade": "simPUBLICO, usoPARTICULAR" }
+                    { "tipo": "whatsapp", "disponibilidade": "simPublico_particular" },
+                    { "tipo": "sms", "disponibilidade": "simPublico_particular" },
+                    { "tipo": "email", "disponibilidade": "simPublico_particular" }
             
             ],
-            "situacao": "ATIVO, INATIVO",
+            "situacao": "ativo_inativo",
             "ordem_exibicao": "", 
             "operadora": [
-                { "nome": "CLARO, OI, NEXTEL", "url_icon": ""}
+                { "nome": "claro_oi_nextel", "url_icon": ""}
             ],
             "ddi": "55",
             "ddd": "21",
@@ -70,13 +59,13 @@
             "telefone_completo": "5521964253379",
 
             "audiencia": [
-                { "tipo": "CELULAR", "tipoAudiencia": "VIEW, ACESSO, CONTATO", "qtde": "" },
-                { "tipo": "WHATSAPP", "tipoAudiencia": "VIEW, ACESSO, CONTATO", "qtde": "" }
+                { "tipo": "celular", "tipoAudiencia": "view_acesso_contato", "qtde": "" },
+                { "tipo": "whatsapp", "tipoAudiencia": "view_acesso_contato", "qtde": "" }
             ],
 
             "audienciaRegistro": [
-                { "tipo": "CELULAR", "tipoAudiencia": "VIEW, ACESSO, CONTATO", "dataHoraReg": "" },
-                { "tipo": "WHATSAPP", "tipoAudiencia": "VIEW, ACESSO, CONTATO", "dataHoraReg": "" }
+                { "tipo": "celular", "tipoAudiencia": "view_acesso_contato", "dataHoraReg": "" },
+                { "tipo": "whatsapp", "tipoAudiencia": "view_acesso_contato", "dataHoraReg": "" }
             ],
 
             "obs": "",
@@ -91,9 +80,8 @@
         {
             "idProjeto": "1",
             "idObjetoPessoaPerfil": "1",
-            "tipoEmail": { "PRINCIPAL", "SECUNDARIO", "CONTA_GMAIL" },
-            "classificacao": "PRINCIPAL", "SECUNDARIO",
-            "status": {"ATIVO", "INATIVO"}
+            "tipoEmail": { "principal", "secundario", "conta_google" },
+            "classificacao": "principal_secundario",
 
             "uso": [ 
                     { "tipo": "app", "disponibilidade": "simPublico_particular" },

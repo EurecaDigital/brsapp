@@ -10,16 +10,16 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-var cat_1 = require("../models/cat");
+var projeto_1 = require("../models/projeto");
 var base_1 = require("./base");
-var CatCtrl = /** @class */ (function (_super) {
-    __extends(CatCtrl, _super);
-    function CatCtrl() {
+var CProjetoCtrlCtrl = /** @class */ (function (_super) {
+    __extends(CProjetoCtrlCtrl, _super);
+    function CProjetoCtrlCtrl() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.model = cat_1.default;
+        _this.model = projeto_1.default;
         return _this;
     }
-    return CatCtrl;
+    return CProjetoCtrlCtrl;
 }(base_1.default));
-exports.default = CatCtrl;
-//# sourceMappingURL=cat.js.map
+exports.default = CProjetoCtrlCtrl;
+//# sourceMappingURL=projeto.js.map

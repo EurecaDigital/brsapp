@@ -8,100 +8,54 @@
     "nickname" : "",
 
     "idObjetoProjetoOrigem": "1",
-    "hashObjetoProjetoOrigem": "3Ba45ir6!@",
+    "hashObjetoProjetoOrigem": "1",
 
-    "tipoPessoa": "FISICA_JURIDICA",
+    "tipoPessoa": "FISICA/JURIDICA",
 
-    "documento_identificacao_desc": "CPF_CNPJ_MEI_CRECI/RJ_SUSEP_NUMERO_CELULAR",
+    "documento_identificacao_desc": "CPF_CNPJ_MEI_CRECI/RJ_SUSEP",
     "documento_identificacao_valor": "02252274794",    
 
     "pessoa_fisica": [
-        { 
-         "tipoOrigem": "COMUM",                  
+        {                  
          "data_nasc": "21/08/1973",
          "sexo": "Masculino",
-         "urlAvatarPerfilPequena": "",
-         "urlAvatarPerfilGrande": ""
+         "urlAvatarPerfil": ""
         }
     ],
 
     "pessoa_juridica": [
-        {            
-         "tipoOrigem": "COMUM",                  
-         "XXX_inscricao_municipal": "",
-         "XXX_inscricao_estadual": "",
-         "XXX_regime_tributacao": "SIMPLES, LUCRO_REAL, LUCRO_PRESUMIDO",
+        {
+         "x_inscricao_municipal": "",
+         "x_inscricao_estadual": "",
+         "x_regime_tributacao": "simples, lucro real, lucro presumido",
          "data_abertura_funcionamento": "",
-         "urlLogoPequena": "",
-         "urlLogoGrande": "",
+         "urlLogoDesktop": "",
+         "urlLogoMobile": "",
          "urlIcon": ""         
         }
     ],
 
         
     "statusPessoaInProjetos": [ 
-        { "idObjetoProjeto": "1", "tipoOrigem": "COMUM", "status": "ATIVO, INATIVO, SUSPENSO" },
-        { "idObjetoProjeto": "1", "tipoOrigem": "PARTICULAR", "status": "INADIMPLENTE, CANCELADO, NOVA_ADESAO" },
-        { "idObjetoProjeto": "2", "tipoOrigem": "PARTICULAR", "status": "ATIVO, INATIVO" },
-        { "idObjetoProjeto": "3", "tipoOrigem": "PARTICULAR", "status": "ATIVO, INATIVO, LEED" }
+        { "idObjetoProjeto": "", "tipoOrigem": "comum", "status": "ativo" },
+        { "idObjetoProjeto": "1", "tipoOrigem": "particular", "status": "morador" }
     
     ],    
 
     "tipoPessoaInProjetos": [
-        {"idObjetoProjeto": "1", "tipoOrigem": "COMUM", "tipoPessoa": "FISICA", "papel": "PESSOA, COLABORADOR"},
-        {"idObjetoProjeto": "1", "tipoOrigem": "COMUM", "tipoPessoa": "JURIDICA", "papel": "EMPRESA, ONG, ENTIDADES, ESTATAL "},
-
-        {"idObjetoProjeto": "1", "tipoOrigem": "PARTICULAR", "tipoPessoa": "FISICA", "papel": "MORADOR, USUARIO, COLABORADOR, AMIGO_DO_BAIRRO, PARCEIRO"},
-        {"idObjetoProjeto": "1", "tipoOrigem": "PARTICULAR", "tipoPessoa": "JURIDICA", "papel": "ANUNCIANTE, COLABORADOR, PARCEIRO"},
-
-        {"idObjetoProjeto": "2", "tipoOrigem": "PARTICULAR", "tipoPessoa": "FISICA", "papel": "PROMITENTE_COMPRADOR, PROPRIETARIO, CORRETOR"},
-        {"idObjetoProjeto": "2", "tipoOrigem": "PARTICULAR", "tipoPessoa": "JURIDICA", "papel": "EMPRESA_PARCEIRA "},
-        
-        {"idObjetoProjeto": "3", "tipoOrigem": "PARTICULAR", "tipoPessoa": "FISICA", "papel": "CLIENTE, LEED, CORRETOR_SEGURO_COM_SUSEP, CORRETOR_SEGURO_SEM_SUSEP, PARCEIRO_SEGURO"},
-        {"idObjetoProjeto": "3", "tipoOrigem": "PARTICULAR", "tipoPessoa": "JURIDICA", "papel": "EMPRESA_PARCEIRA, CORRETORA_SEGURO "}
-                
+        {"idObjetoProjeto": "1", "tipoPessoa": "fisica", "classe": "amigo_do_bairro, colaborador, parceiro, morador, usuario"},
+        {"idObjetoProjeto": "1", "tipoPessoa": "juridica", "classe": "anunciante, parceiro, empresa_pj, empresa_pf, empresa_azt, empresa_azt_pj, empresa_azt_pf, parceiro"}
     ],
 
-    "documentacaoPessoa": [ 
-        { "idObjetoPessoa": "1",             
-          "idObjetoProjeto": "3", 
-          "tipoOrigem": "PARTICULAR", 
+    "documentosPessoa": [ 
+        { "idObjetoProjeto": "3", "tipoOrigem": "particular", 
           "descricao": "CNH", "valor": "...", "validade": "", 
           "conteudo1": "valor1", "conteudo2": "valor2", "conteudo3": "valor3"  
         }
     ],    
 
     "loginPessoa": [ 
-        {"idObjetoPessoa": "1",             
-         "idObjetoProjeto": "1",         
-         "meioFormatoAcesso": "EMAIL, FACEBOOK, GOOGLE+, NUMERO_CELULAR, LOGIN_SIMPLES",          
-         "login": "21964253379", 
-         "senha": "", 
-         "senha_lembrete": ""
-         }
-    ]
-
-    "logAcesso": [ 
-        { "idObjetoPessoa": "1",             
-          "dataHoraReg": [
-              {                  
-                  "meioFormatoAcesso": "EMAIL",
-                  "idObjetoProjeto": "1",
-                  "aplicacaoLogin": "MODULO_COLABORADOR",
-                  "statusLogin": "SUCESSO, ERRO, ERRO_404",
-                  "dataHoraLog": ""
-              },
-
-              {                  
-                  "meioFormatoAcesso": "NUMERO_CELULAR",
-                  "idObjetoProjeto": "1",
-                  "aplicacaoLogin": "MODULO_USUARIO",
-                  "statusLogin": "SUCESSO, ERRO, ERRO_404",
-                  "dataHoraLog": ""
-              }
-              
-          ]
-        }
+        {"idObjetoProjeto": "", "tipoLogin": "numero_celular", "login": "21964253379", "senha": "", "senha_lembrete": ""}
     ]
     
 

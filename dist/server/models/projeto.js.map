@@ -1,0 +1,1 @@
+{"version":3,"file":"projeto.js","sourceRoot":"","sources":["../../../server/models/projeto.ts"],"names":[],"mappings":";;AAAA,mCAAqC;AAErC,IAAM,aAAa,GAAG,IAAI,QAAQ,CAAC,MAAM,CAAC;IACxC,cAAc,EAAE,MAAM;IACtB,IAAI,EAAE,MAAM;IACZ,IAAI,EAAE,MAAM;IACZ,UAAU,EAAC,MAAM;CAClB,CAAC,CAAC;AAEH,IAAM,OAAO,GAAG,QAAQ,CAAC,KAAK,CAAC,SAAS,EAAE,aAAa,CAAC,CAAC;AAEzD,kBAAe,OAAO,CAAC"}
