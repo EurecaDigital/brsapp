@@ -6,6 +6,25 @@ import { HttpModule } from '@angular/http';
 import { ToastComponent } from './toast/toast.component';
 import { LoadingComponent } from './loading/loading.component';
 
+
+import { trigger, state, animate, transition, style } from '@angular/animations';
+
+export const fadeInAnimation =
+   
+   trigger('fadeInAnimation', [
+
+       // route 'enter' transition
+       transition(':enter', [
+
+         
+           style({ opacity: 0 }),
+
+         
+           animate('.3s', style({ opacity: 1 }))
+       ]),
+   ]);
+
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -14,7 +33,7 @@ import { LoadingComponent } from './loading/loading.component';
     HttpModule
   ],
   exports: [
-    // Shared Modules
+    /* Shared Modules */
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,

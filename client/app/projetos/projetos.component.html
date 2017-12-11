@@ -1,0 +1,91 @@
+<app-loading [condition]="isLoaading">
+</app-loading>
+<app-toast [message]="toast.message"></app-toast>
+
+
+<div class="card" *ngIf="!isLoaading">
+  <h4 class="card-header">Projetos cadastrados ({{projetos.length}})</h4>
+  <div class="card-block">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-default">
+        <tr>
+          <th>Projeto Destino</th>
+          <th>Tipo</th>
+          <th>Nome</th>
+          <th>Assinatura</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="projetos.length === 0">
+        <tr>
+          <td colspan="4">Não há Projetos cadastrados no DB. Adicione um novo Projeto abaixo.</td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="!isEditing">
+        <tr *ngFor="let projeto of projetos">
+          <td>{{projeto.projetoDestino}}</td>
+          <td>{{projeto.tipo}}</td>
+          <td>{{projeto.nome}}</td>
+          <td>{{projeto.assinatura}}</td>
+          <td>
+            <button class="btn btn-sm btn-warning" (click)="enableEditing(projeto)">
+              <i class="fa fa-pencil"></i> Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteProjeto(projeto)">
+              <i class="fa fa-trash"></i> Delete</button>
+          </td>
+        </tr>
+      </tbody>
+      <tbody *ngIf="isEditing">
+        <tr>
+          <td colspan="4">
+            <form class="form-inline" #form="ngForm" (ngSubmit)="editProjeto(projeto)" style="display:inline">
+              <div class="form-group">
+                <input class="form-control" type="text" name="nome" [(ngModel)]="projeto.nome" placeholder="Nome" required>
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="tipo" [(ngModel)]="projeto.tipo" placeholder="Tipo" required>
+              </div>
+
+              <div class="form-group">
+                <input class="form-control" type="text" name="assinatura" [(ngModel)]="projeto.assinatura" placeholder="Assinatura" required>
+              </div>
+              <div class="form-group">
+                <input class="form-control" type="text" name="projetoDestino" [(ngModel)]="projeto.projetoDestino" placeholder="Destino"
+                  required>
+              </div>
+              <button class="btn btn-sm btn-primary" type="submit" [disabled]="!form.form.valid">
+                <i class="fa fa-floppy-o"></i> Salvar</button>
+            </form>
+            <button class="btn btn-sm btn-warning" (click)="cancelEditing()">
+              <i class="fa fa-times"></i> Cancelar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card" *ngIf="!isEditing">
+  <h4 class="card-header">Adicione novo projeto</h4>
+  <div class="card-block">
+    <form class="form-inline" [formGroup]="addProjetoForm" (ngSubmit)="addProjeto()" style="text-align:center">
+      <div class="form-group">
+        <input class="form-control" type="text" name="nome" formControlName="nome" placeholder="Nome">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="tipo" formControlName="tipo" placeholder="Tipo" min="0">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="assinatura" formControlName="assinatura" placeholder="Assinatura" step="any"
+          min="0">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" name="projetoDestino" formControlName="projetoDestino" placeholder="Projeto Destino"
+          step="any" min="0">
+      </div>
+
+      <button class="btn btn-primary" type="submit" [disabled]="!addCatForm.valid">
+        <i class="fa fa-floppy-o"></i> Add</button>
+    </form>
+  </div>
+</div>

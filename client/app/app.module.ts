@@ -16,6 +16,103 @@ import { LogoutComponent } from './logout/logout.component';
 import { AccountComponent } from './account/account.component';
 import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProjetosComponent } from './projetos/projetos.component';
+import { ProjetoService } from './services/projeto.service';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
+/*
+import { ObserversModule } from '@angular/cdk/observers';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { A11yModule } from '@angular/cdk/a11y';
+import { BidiModule } from '@angular/cdk/bidi';
+import { PortalModule } from '@angular/cdk/portal';
+import { MatCommonModule, MatRippleModule } from '@angular/material/core';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioButton } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSidenavModule } from '@angular/material/sidenav';
+
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatChipsModule } from '@angular/material/chips'; 
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTabsModule } from '@angular/material';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatExpansionPanel } from '@angular/material';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatStepperModule } from '@angular/material/stepper';
+import '@angular/material/core/theming/prebuilt/deeppurple-amber.css
+*/ 
+
+const MATERIAL_MODULES = [
+  MatButtonModule,
+  MatMenuModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  BrowserAnimationsModule,
+  MatSidenavModule,
+  MatListModule
+  
+  /* 
+   MatAutocompleteModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatChipsModule,
+  MatCheckboxModule,
+  MatDatepickerModule,
+  MatTableModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatStepperModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  OverlayModule,
+  PortalModule,
+  BidiModule,
+  A11yModule,
+  MatCommonModule,
+  ObserversModule
+  */ 
+  ];
 
 @NgModule({
   declarations: [
@@ -27,21 +124,32 @@ import { NotFoundComponent } from './not-found/not-found.component';
     LogoutComponent,
     AccountComponent,
     AdminComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProjetosComponent
+     /*
+    MatExpansionPanel
+    */
   ],
-  imports: [
+  imports: [  
     RoutingModule,
-    SharedModule
+    SharedModule,
+    BrowserModule,
+    FlexLayoutModule,
+    MATERIAL_MODULES
   ],
   providers: [
     AuthService,
     AuthGuardLogin,
     AuthGuardAdmin,
     CatService,
-    UserService
+    UserService,
+    ProjetoService 
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports:MATERIAL_MODULES
 })
 
 export class AppModule { }
+export class MaterialModule { }
+

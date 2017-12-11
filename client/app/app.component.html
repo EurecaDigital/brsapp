@@ -1,47 +1,136 @@
 <div class="page-header">
 
-    <nav class="navbar navbar-custom">
-        <!-- Navbar content -->
+  <div class="example-container">
+    <!--[class.example-is-mobile]="mobileQuery.matches"-->
 
-        <div class="nav navbar-nav">
-            <a class="navbar-brand" href="#">
+    <mat-sidenav-container class="all-wrap" fullscreen>
+      <mat-sidenav #sidenav>
+        <mat-list>
+          <mat-list-item [routerLink]="['/']"> Dashboard</mat-list-item>
+          <mat-list-item [routerLink]="['/login']"> Colaboradores</mat-list-item>
+          <mat-list-item [routerLink]="['/login']"> Anunciantes</mat-list-item>
+          <mat-list-item [routerLink]="['/login']"> Anúncios</mat-list-item>
+          <mat-list-item [routerLink]="['/login']"> Usuários</mat-list-item>
+          <mat-list-item [routerLink]="['/login']"> Dpoimentos</mat-list-item>
+          <mat-list-item [routerLink]="['/login']"> Parametrização</mat-list-item>
+          <mat-list-item [routerLink]="['/login']"> Sair</mat-list-item>
+        </mat-list>
+      </mat-sidenav>
+
+      <div class="page-wrap">
+        <header role="banner">
+          <mat-toolbar color="accent">
+            <button type="button" mat-icon-button (click)="sidenav.open()" title="Open sidenav" fxHide="false" fxHide.gt-sm>
+              <mat-icon class="mat-icon">menu</mat-icon>
+            </button>
+            <section>
+              <a href="#">
                 <img src="/assets/nav_logo_Bairro_Social.png" alt="Bairro Social">
-                </a>
-            <a routerLink="/" class="nav-item nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
-              <i class="fa fa-home"></i> Home
-            </a>
-            <a routerLink="/cats" class="nav-item nav-link" routerLinkActive="active">
-              <i class="fa fa-list"></i> Cadastro
-            </a>
-            <a routerLink="/login" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
-              <i class="fa fa-sign-in"></i> Entrar
-            </a>
-            <a routerLink="/register" class="nav-item nav-link" routerLinkActive="active" *ngIf="!auth.loggedIn">
-              <i class="fa fa-user-plus"></i> Registrar
-            </a>
-            <a routerLink="/account" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
-              <i class="fa fa-user"></i> Account ({{auth.currentUser.username}})
-            </a>
-            <a routerLink="/admin" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
-              <i class="fa fa-lock"></i> Admin
-            </a>
-            <a routerLink="/logout" class="nav-item nav-link" routerLinkActive="active" *ngIf="auth.loggedIn">
-              <i class="fa fa-sign-out"></i> Sair
-            </a>
-          </div>
-      </nav>
-     
-   
-      
- 
+              </a>
+              Bairro Social
+            </section>
+            <span class="example-spacer"></span>
+            <span class="demo-fill-remaining"></span>
+            <section>
+              <mat-menu #appMenu="matMenu" x-position="before" #menu="matMenu">
+                <div>
+                  <button mat-icon-button rocuterLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                    <mat-icon class="fa fa-home" mat-24></mat-icon>
+                  </button>
+                </div>
+                <div>
+                  <button mat-icon-button routerLink="/login" routerLinkActive="active">
+                    <mat-icon class="fa fa-sign-in"></mat-icon>
+                  </button>
+                </div>
 
-  <!--/.navbar -->
-  <!-- Page Content -->
-  <!-- /.container -->
-  <div class="container">
+              </mat-menu>
+            </section>
 
-    <router-outlet></router-outlet>
+            <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+              <section>
+
+                <button mat-icon-button rocuterLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                  <mat-icon class="fa fa-home"></mat-icon>
+                </button>
+
+                <button mat-icon-button routerLink="/login" routerLinkActive="active" *ngIf="!auth.loggedIn">
+                  <mat-icon class="fa fa-sign-in"></mat-icon>
+                </button>
+
+                <button mat-icon-button id="header_menu" [matMenuTriggerFor]="appMenu">
+                  <mat-icon class="fa fa-cog"></mat-icon>
+                </button>
+
+              </section>
+            </div>
+
+            <mat-menu #appMenu="matMenu" yPosition="below" class="header_menu">
+              <div>
+                <button mat-icon-button routerLink="/projetos" routerLinkActive="active">
+                  <mat-icon class="fa fa-file"></mat-icon> Projetos
+                </button>
+              </div>
+              <div>
+                <button mat-icon-button routerLink="/register" routerLinkActive="active" *ngIf="!auth.loggedIn">
+                  <mat-icon class="fa fa-user"></mat-icon> Novo
+                </button>
+              </div>
+              <div>
+                <button mat-icon-button routerLink="/admin" routerLinkActive="active" *ngIf="auth.loggedIn && auth.isAdmin">
+                  <mat-icon class="fa fa-lock"></mat-icon> Admin
+                </button>
+              </div>
+              <div>
+                <button mat-icon-button routerLink="/logout" routerLinkActive="active" *ngIf="auth.loggedIn">
+                  <mat-icon class="fa fa-sign-out"></mat-icon> Sair
+                </button>
+              </div>
+            </mat-menu>
+
+          </mat-toolbar>
+        </header>
+        <main class="content">
+          <router-outlet></router-outlet>
+        </main>
+        <footer>
+           <span style="text-align: center">&nbsp; 2017 Bairro Social V/span>0.1.</span>
+        </footer>
+      </div>
+    </mat-sidenav-container>
+
+
 
   </div>
 
-  <footer class="navbar-fixed-bottom"> 2017 Bairro Social V0.1. </footer>
+  <!--/.toolbar -->
+
+
+
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="start center" class="content">
+      <div class="blocks" fxFlex="20%">1</div>
+      <div class="blocks" fxFlex="60%">2</div>
+      <div class="blocks" fxFlex>3</div>
+    </div>
+  </div>
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="space-around center" class="content">
+      <div class="blocks">1</div>
+      <div class="blocks">2</div>
+      <div class="blocks">3</div>
+    </div>
+  </div>
+  <div class="container">
+    <div fxLayout="row" fxLayoutAlign="begin center" class="content">
+      <div class="blocks">1</div>
+      <div class="blocks">2</div>
+      <div class="blocks">3</div>
+    </div>
+  </div>
+  <div class="container">
+    <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex class="contentResp">
+      <div class="blocks" fxFlex> I'm above on mobile, and to the left on larger devices. </div>
+      <div class="blocks" fxFlex> I'm below on mobile, and to the right on larger devices. </div>
+    </div>
+  </div>
