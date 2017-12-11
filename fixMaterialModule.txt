@@ -1,0 +1,161 @@
+
+Angular Material “has no exported member ‘MaterialModule’”
+(this was tested against angular material beta 12)
+If you use @angular/material you are in for some big breaking changes. It is in beta, so you can’t really bitch about it. But, here is what to do about them,
+a) There is no more MaterialModule. The idea being, you import what you need. This makes sense since as angular material is growing, I shouldn’t have to package megabytes, if all I need is a button. So you import what you need.
+b) No more “md” everything is renamed to “mat”, so do an educated search replace from “md” to “mat” in your element names, attribute values etc.
+Regarding the first problem, a simple fix is to create your own material module as below,
+import { NgModule } from '@angular/core';
+import { OverlayModule } from '@angular/cdk/overlay';
+import { A11yModule } from '@angular/cdk/a11y';
+import { BidiModule } from '@angular/cdk/bidi';
+import { ObserversModule } from '@angular/cdk/observers';
+import { PortalModule } from '@angular/cdk/portal';
+import { MatCommonModule, MatRippleModule } from '@angular/material/core';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioButton } from '@angular/material/radio';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTabsModule } from '@angular/material';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatExpansionPanel } from '@angular/material';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatStepperModule } from '@angular/material/stepper';
+const MATERIAL_MODULES = [
+MatAutocompleteModule,
+MatButtonModule,
+MatButtonToggleModule,
+MatCardModule,
+MatChipsModule,
+MatCheckboxModule,
+MatDatepickerModule,
+MatTableModule,
+MatDialogModule,
+MatFormFieldModule,
+MatGridListModule,
+MatIconModule,
+MatInputModule,
+MatListModule,
+MatMenuModule,
+MatPaginatorModule,
+MatProgressBarModule,
+MatProgressSpinnerModule,
+MatRippleModule,
+MatSelectModule,
+MatSidenavModule,
+MatSliderModule,
+MatSlideToggleModule,
+MatSnackBarModule,
+MatSortModule,
+MatStepperModule,
+MatTabsModule,
+MatToolbarModule,
+MatTooltipModule,
+OverlayModule,
+PortalModule,
+BidiModule,
+A11yModule,
+MatCommonModule,
+ObserversModule
+];
+@NgModule({
+imports: MATERIAL_MODULES,
+declarations: [MatExpansionPanel, MatRadioButton],
+exports: MATERIAL_MODULES,
+})
+export class MaterialModule { }
+And then import the above module into your existing application’s app module. It’s not a GREAT way of getting around the problem since you are importing everything, thereby making your package larger than it needs to be.
+However, if you want to get your application running quickly again, this is a good way out. And then, your individual apps can choose to import exactly what they need as a subset of the above mentioned file.
+Cool?
+AngularjsAngularMaterial DesignJavaScript
+One clap, two clap, three clap, forty?
+By clapping more or less, you can signal to us which stories really stand out.
+
+
+26
+
+Follow
+Go to the profile of Sahil Malik
+Sahil Malik
+www.winsmarts.com
+Follow
+Winsmarts.com
+Winsmarts.com
+Consulting & Training
+More from Winsmarts.com
+Running oh my zsh on Windows 10
+Go to the profile of Sahil Malik
+Sahil Malik
+
+14
+
+Also tagged Angularjs
+An Overview of JavaScript Testing in 2017
+Go to the profile of Vitali Zaidman
+Vitali Zaidman
+
+2.3K
+
+Also tagged Angular
+Angular Authentication: Using the Http Client and Http Interceptors
+Go to the profile of Ryan Chenkie
+Ryan Chenkie
+
+950
+
+Responses
+Write a response…
+Winsmarts.com
+Never miss a story from Winsmarts.com, when you sign up for Medium. Learn more
+
+
+
+ <div>
+    <mat-toolbar color="primary">
+      <span><mat-icon>mood</mat-icon></span>
+  
+      <span>Yay, Material in Angular 2!</span>
+  
+      <button mat-icon-button [mat-menu-trigger-for]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-menu x-position="before" #menu="matMenu">
+      <button mat-menu-item>Option 1</button>
+      <button mat-menu-item>Option 2</button>
+    </mat-menu>
+  
+    <mat-card>
+      <button mat-button>All</button>
+      <button mat-raised-button>Of</button>
+      <button mat-raised-button color="primary">The</button>
+      <button mat-raised-button color="accent">Buttons</button>
+    </mat-card>
+  
+    <span class="done">
+      <button mat-fab>
+        <mat-icon>check circle</mat-icon>
+      </button>
+    </span>
+  </div>
