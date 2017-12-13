@@ -1,8 +1,9 @@
 import { AuthService } from './services/auth.service';
-import {MediaMatcher} from '@angular/cdk/layout';
-import {ChangeDetectorRef, Component} from '@angular/core';
+import { SidenavService } from "./services/sidenav.service";
+import { MediaMatcher } from '@angular/cdk/layout';
+import { ChangeDetectorRef, Component, Injectable } from '@angular/core';
 
-
+@Injectable()
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html'
@@ -10,15 +11,11 @@ import {ChangeDetectorRef, Component} from '@angular/core';
 
 
 export class AppComponent {
- 
 
-  constructor(public auth: AuthService) {  
-    
-   }
 
-    ngOnDestroy(): void {
+  constructor(public auth: AuthService) {  }
 
-  }
 
+  ngOnDestroy(): void { }
 
 }

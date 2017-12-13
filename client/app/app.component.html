@@ -5,9 +5,18 @@
 
     <mat-sidenav-container class="all-wrap" fullscreen>
       <mat-sidenav #sidenav>
+          <mat-toolbar color="primary">
+              
+               <section>
+               <a href="#">
+                 <img src="/assets/nav_logo_Bairro_Social.png" alt="Bairro Social">
+               </a>
+                <span style="padding-left:10px">Bairro Social</span>
+               </section>
+               </mat-toolbar>
         <mat-list>
-          <mat-list-item [routerLink]="['/']"> Dashboard</mat-list-item>
-          <mat-list-item routerLink="/projetos" routerLinkActive="active">  Colaboradores</mat-list-item>
+          <mat-list-item [routerLink]="['./']"> Dashboard</mat-list-item>
+          <mat-list-item routerLink="/projetos" routerLinkActive="active"> Colaboradores</mat-list-item>
           <mat-list-item [routerLink]="['/login']"> Anunciantes</mat-list-item>
           <mat-list-item [routerLink]="['/login']"> Anúncios</mat-list-item>
           <mat-list-item [routerLink]="['/login']"> Usuários</mat-list-item>
@@ -27,7 +36,7 @@
               <a href="#">
                 <img src="/assets/nav_logo_Bairro_Social.png" alt="Bairro Social">
               </a>
-              Bairro Social
+              <span style="padding-left:10px">Bairro Social</span>
             </section>
             <span class="example-spacer"></span>
             <span class="demo-fill-remaining"></span>
