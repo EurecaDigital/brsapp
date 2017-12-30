@@ -6,7 +6,29 @@ var userSchema = new mongoose.Schema({
     username: String,
     email: { type: String, unique: true, lowercase: true, trim: true },
     password: String,
-    role: String
+    role: String,
+    cep: {
+        cep: String,
+        logradouro: String,
+        numero: String,
+        complemento: String,
+        cidade: String,
+        bairro: String,
+        uf: String
+    },
+    sexo: String,
+    datanascimento: String,
+    celular: String,
+    duvidas: String,
+    perfil: String,
+    pessoas: String,
+    animais: String,
+    veiculos: String,
+    construcao: String,
+    ocupacao: String,
+    duvidasii: String,
+    opiniao: String,
+    comentario: String
 });
 // Before saving the user, hash the password
 userSchema.pre('save', function (next) {
