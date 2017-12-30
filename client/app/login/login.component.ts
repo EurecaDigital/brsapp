@@ -10,8 +10,10 @@ import { ToastComponent } from '../shared/toast/toast.component';
   templateUrl: './login.component.html'
 })
 export class LoginComponent implements OnInit {
-
+  
+  isLinear = false;
   loginForm: FormGroup;
+
   email = new FormControl('', [
     Validators.required,
     Validators.minLength(3),
@@ -27,6 +29,8 @@ export class LoginComponent implements OnInit {
               private router: Router,
               public toast: ToastComponent) { }
 
+
+
   ngOnInit() {
     if (this.auth.loggedIn) {
       this.router.navigate(['/']);
@@ -34,8 +38,10 @@ export class LoginComponent implements OnInit {
     this.loginForm = this.formBuilder.group({
       email: this.email,
       password: this.password
-    });
+    });  
+    
   }
+
 
   setClassEmail() {
     return { 'has-danger': !this.email.pristine && !this.email.valid };
@@ -52,3 +58,8 @@ export class LoginComponent implements OnInit {
   }
 
 }
+
+
+/**
+ * @title Stepper overview
+ */

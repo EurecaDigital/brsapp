@@ -1,0 +1,68 @@
+<mat-card>
+  <mat-card-content>
+
+    <form [formGroup]="cepForm">
+
+      <mat-form-field>
+        <span>
+          <mat-icon [class.primary]="cep"></mat-icon>&nbsp;</span>
+        <input matInput placeholder="000000-000" formControlName="cep">
+        <mat-error>*</mat-error>
+      </mat-form-field>
+
+      <div color="primary">
+        <button mat-button (click)="getCeps(cep)">Buscar</button>
+      </div>
+      <br/>
+
+      <mat-form-field>
+        <span>
+          <mat-icon [class.primary]="bairro"></mat-icon>&nbsp;</span>
+        <input matInput placeholder="Bairro" formControlName="bairro"  [disabled]>
+        <mat-error>*</mat-error>
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field>
+        <span>
+          <mat-icon [class.primary]="cidade"></mat-icon>&nbsp;</span>
+        <input matInput placeholder="Cidade" formControlName="cidade" required  [disabled]>
+        <mat-error>*</mat-error>
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field>
+        <span>
+          <mat-icon [class.primary]="uf"></mat-icon>&nbsp;</span>
+        <input matInput placeholder="UF" formControlName="uf"  [disabled]>
+        <mat-error>*</mat-error>
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field>
+        <span>
+          <mat-icon [class.primary]="logradouro"></mat-icon>&nbsp;</span>
+        <input matInput placeholder="Logradouro" formControlName="logradouro" [disabled]>
+        <mat-error>*</mat-error>
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field>
+        <span>
+          <mat-icon [class.primary]="numero"></mat-icon>&nbsp;</span>
+        <input matInput placeholder="Número" formControlName="numero"  required>
+        <mat-error>*</mat-error>
+      </mat-form-field>
+      <br/>
+
+      <mat-form-field>
+        <span>
+          <mat-icon [class.primary]="complemento"></mat-icon>&nbsp;</span>
+        <input matInput placeholder="Complemento" formControlName="complemento"  required>
+        <mat-error>*</mat-error>
+        <mat-error>*</mat-error>
+      </mat-form-field>
+    </form>
+
+  </mat-card-content>
+</mat-card>

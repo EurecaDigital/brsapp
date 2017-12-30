@@ -3,14 +3,17 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RoutingModule } from './routing.module';
 import { SharedModule } from './shared/shared.module';
 import { CatService } from './services/cat.service';
+import { CepService } from './services/cep.service';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
+
 import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';
 import { AppComponent } from './app.component';
 import { CatsComponent } from './cats/cats.component';
 import { AboutComponent } from './about/about.component';
 import { RegisterComponent } from './register/register.component';
+import { CepComponent } from './cep/cep.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AccountComponent } from './account/account.component';
@@ -18,6 +21,8 @@ import { AdminComponent } from './admin/admin.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProjetosComponent } from './projetos/projetos.component';
 import { ProjetoService } from './services/projeto.service';
+import { SidenavService } from './services/sidenav.service';
+
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -26,10 +31,14 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from "@angular/material/select";
 
+import { MatStepperModule } from '@angular/material/stepper';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatFormFieldModule, MatInputModule } from "@angular/material"; 
+
 
 /*
 import { ObserversModule } from '@angular/cdk/observers';
@@ -62,7 +71,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatStepperModule } from '@angular/material/stepper';
+
 import '@angular/material/core/theming/prebuilt/deeppurple-amber.css
 */ 
 
@@ -74,7 +83,11 @@ const MATERIAL_MODULES = [
   MatCardModule,
   BrowserAnimationsModule,
   MatSidenavModule,
-  MatListModule
+  MatListModule,
+  MatSelectModule,
+  MatStepperModule,
+  MatFormFieldModule,
+  MatInputModule
   
   /* 
    MatAutocompleteModule,
@@ -95,7 +108,7 @@ const MATERIAL_MODULES = [
   MatProgressBarModule,
   MatProgressSpinnerModule,
   MatRippleModule,
-  MatSelectModule,
+  
   MatSidenavModule,
   MatSliderModule,
   MatSlideToggleModule,
@@ -125,7 +138,8 @@ const MATERIAL_MODULES = [
     AccountComponent,
     AdminComponent,
     NotFoundComponent,
-    ProjetosComponent
+    ProjetosComponent,
+    CepComponent
      /*
     MatExpansionPanel
     */
@@ -143,7 +157,10 @@ const MATERIAL_MODULES = [
     AuthGuardAdmin,
     CatService,
     UserService,
-    ProjetoService 
+    ProjetoService,
+    SidenavService,
+    CepService
+     
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],

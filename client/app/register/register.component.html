@@ -1,30 +1,197 @@
 <app-toast [message]="toast.message"></app-toast>
 
-<div class="card">
-  <h4 class="card-header">Register</h4>
-  <div class="card-block">
-    <form [formGroup]="registerForm" (ngSubmit)="register()">
-      <div class="input-group" [ngClass]="setClassUsername()">
-        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-        <input class="form-control" type="text" name="username" formControlName="username" placeholder="Username" autofocus>
-      </div>
-      <div class="input-group" [ngClass]="setClassEmail()">
-        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-        <input class="form-control" type="email" name="email" formControlName="email" placeholder="Email">
-      </div>
-      <div class="input-group" [ngClass]="setClassPassword()">
-        <span class="input-group-addon"><i class="fa fa-key"></i></span>
-        <input class="form-control" type="password" name="password" formControlName="password" placeholder="Password">
-      </div>
-      <div class="input-group">
-        <span class="input-group-addon"><i class="fa fa-black-tie"></i></span>
-        <select class="form-control" name="role" formControlName="role">
-          <option value="" selected disabled>Role</option>
-          <option value="user">User</option>
-          <option value="admin">Admin</option>
-        </select>
-      </div>
-      <button class="btn btn-primary" type="submit" [disabled]="!registerForm.valid"><i class="fa fa-user-plus"></i> Register</button>
-    </form>
-  </div>
-</div>
+
+<mat-card>
+  <mat-card-content>
+
+    <h4>Colaboradores</h4>
+
+    <mat-horizontal-stepper [linear]="isLinear">
+
+      <mat-step [stepControl]="email">
+
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <ng-template matStepLabel>Identificação</ng-template>
+
+          <mat-form-field>
+            <input matInput placeholder="Sexo" formControlName="sexo">
+          </mat-form-field>
+
+          <br/>
+
+          <mat-form-field>
+            <span>
+              <mat-icon [class.primary]="email"></mat-icon>&nbsp;</span>
+            <input matInput placeholder="Nome" formControlName="email" required>
+            <mat-error>*</mat-error>
+          </mat-form-field>
+
+          <br/>
+
+          <mat-form-field>
+            <span>
+              <mat-icon [class.primary]="password"></mat-icon>&nbsp;</span>
+            <input matInput type="password" placeholder="Senha" formControlName="password" required>
+            <mat-error>*</mat-error>
+          </mat-form-field>
+
+          <br/>
+
+          <mat-form-field>
+            <span>
+              <mat-icon [class.primary]="username"></mat-icon>&nbsp;</span>
+            <input matInput placeholder="Nome" formControlName="username" required>
+            <mat-error>*</mat-error>
+          </mat-form-field>
+
+          <br/>
+
+          <mat-form-field>
+            <mat-select placeholder="Tipo Usuario" [formControl]="role">
+              <mat-option value="">Tipo</mat-option>
+              <mat-option value="user">Usuario</mat-option>
+              <mat-option value="admin">Colaborador</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <br/>
+
+          <mat-form-field>
+            <span>
+              <mat-icon [class.primary]="datanascimento"></mat-icon>&nbsp;</span>
+            <input matInput placeholder="Data Nascimento" formControlName="datanascimento" required>
+            <mat-error>*</mat-error>
+          </mat-form-field>
+
+          <br/>
+
+          <mat-form-field>
+            <span>
+              <mat-icon [class.primary]="celular"></mat-icon>&nbsp;</span>
+            <input matInput placeholder="Nro.Celular" formControlName="celular" required>
+            <mat-error>*</mat-error>
+          </mat-form-field>
+          <br/>
+          <mat-form-field>
+            <span>
+              <mat-icon [class.primary]="duvidas"></mat-icon>&nbsp;</span>
+            <input matInput placeholder="Dúvidas/Por que?" formControlName="duvidas" required>
+            <mat-error>*</mat-error>
+          </mat-form-field>
+
+
+          <div color="primary">
+            <button mat-button matStepperNext>Próximo</button>
+          </div>
+        </form>
+
+      </mat-step>
+
+      <br/>
+      <mat-step [stepControl]="cep">
+        <ng-template matStepLabel>Endereço</ng-template>
+        <app-cep></app-cep>
+      </mat-step>
+      <br/>
+
+      <mat-step [stepControl]="password">
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+          <ng-template matStepLabel>Perfil</ng-template>
+
+          <mat-form-field>
+            <span>
+              <mat-icon [class.primary]="pessoas"></mat-icon>&nbsp;</span>
+            <input matInput placeholder="As pessoas que moram..." formControlName="perfil" required>
+            <mat-error>*</mat-error>
+          </mat-form-field>
+
+          <br/>
+
+          <mat-form-field>
+            <span>
+              <mat-icon [class.primary]="animais"></mat-icon>&nbsp;</span>
+            <input matInput placeholder="Animais de estimação..." formControlName="perfil" required>
+            <mat-error>*</mat-error>
+          </mat-form-field>
+
+          <br/>
+
+          <mat-form-field>
+            <span>
+              <mat-icon [class.primary]="veiculos"></mat-icon>&nbsp;</span>
+            <input matInput placeholder="Carros e Motos..." formControlName="veiculos" required>
+            <mat-error>*</mat-error>
+          </mat-form-field>
+
+          <br/>
+
+          <mat-form-field>
+            <span>
+              <mat-icon [class.primary]="construcao"></mat-icon>&nbsp;</span>
+            <input matInput placeholder="Construir ou Reformar..." formControlName="construcao" required>
+            <mat-error>*</mat-error>
+          </mat-form-field>
+
+          <br/>
+
+          <mat-form-field>
+            <span>
+              <mat-icon [class.primary]="ocupacao"></mat-icon>&nbsp;</span>
+            <input matInput placeholder="Sua ocupacao..." formControlName="ocupacao" required>
+            <mat-error>*</mat-error>
+          </mat-form-field>
+
+          <br/>
+
+          <mat-form-field>
+            <span>
+              <mat-icon [class.primary]="duvidasii"></mat-icon>&nbsp;</span>
+            <input matInput placeholder="Dúvidas/Por que?..." formControlName="duvidasii" required>
+            <mat-error>*</mat-error>
+          </mat-form-field>
+
+          <br/>
+
+          <div>
+            <button mat-button matStepperPrevious>Voltar</button>
+            <button mat-button matStepperNext>Próximo</button>
+          </div>
+        </form>
+      </mat-step>
+
+      <mat-step [stepControl]="agradecimento">
+        <ng-template matStepLabel>Agradecimentos</ng-template>
+        Muito bom poder contar com você na implantação deste projeto que visa um bairro melhor. O que acha do projeto.
+
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+          <mat-form-field>
+            <span>
+              <mat-icon [class.primary]="opiniao"></mat-icon>&nbsp;</span>
+            <input matInput placeholder="O que acha do projeto?..." formControlName="opiniao" required>
+            <mat-error>*</mat-error>
+          </mat-form-field>
+
+          <br/>
+
+          <mat-form-field>
+            <span>
+              <mat-icon [class.primary]="comentario"></mat-icon>&nbsp;</span>
+            <input matInput placeholder="Deseja fazer comentário?..." formControlName="comentario" required>
+            <mat-error>*</mat-error>
+          </mat-form-field>
+        </form>
+
+
+        <div>
+          <button mat-button type="submit" [disabled]="!registerForm.valid">
+            <i class="fa fa-login"></i> Cadastrar</button>
+          <button mat-button matStepperPrevious>Voltar</button>
+        </div>
+
+      </mat-step>
+
+    </mat-horizontal-stepper>
+
+  </mat-card-content>
+</mat-card>

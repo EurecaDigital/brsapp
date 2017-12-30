@@ -158,6 +158,58 @@ main {
   z-index: 2;
 }
 
+/** No CSS for this example */
+
+
+/* In general, top-margin is used to set the vertical position of the element's
+ * baseline with left/right neighbors. Height is used to set vertical position
+ * of the next element down the page. Each element's overall height is 66px here.
+ */
+ .mat-select {
+  margin-top: 16px;
+  height: 50px;
+}
+
+mat-card {
+  margin: 15px;
+}
+mat-card-title {
+  margin-bottom: 50px;
+}
+mat-card-actions {
+  margin-bottom: 0px;
+}
+.question-form {
+  width: 90%;
+}
+.full-width {
+  width: 100%;
+}
+
+.mat-radio-group, .checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mat-checkbox {
+  display: inline-block;
+  margin-right: 16px;
+  margin-top: 18px;
+  height: 48px;
+}
+.mat-radio-button {
+  margin-right: 16px;
+  margin-top: 20px;
+  height: 46px;
+}
+
+.mat-slider-horizontal {
+  width: 95%;
+  margin-top: 21px;
+  height: 45px;
+}
+
+
 .header_menu{       
   text-align: left; 
   margin-top: 45px !important;
@@ -181,4 +233,73 @@ main {
 
 .example-spacer {
   flex: 1 1 auto;
+}
+
+
+
+
+
+@mixin mat-stepper-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+  $primary: map-get($theme, primary);
+
+  .mat-step-header {
+    &.cdk-keyboard-focused,
+    &.cdk-program-focused,
+    &:hover {
+      background-color: mat-color($background, hover);
+    }
+
+    .mat-step-label,
+    .mat-step-optional {
+      color: mat-color($foreground, disabled-text);
+    }
+
+    .mat-step-icon {
+      background-color: mat-color($primary);
+      color: mat-color($primary, default-contrast);
+    }
+
+    .mat-step-icon-not-touched {
+      background-color: mat-color($foreground, disabled-text);
+      color: mat-color($primary, default-contrast);
+    }
+
+    .mat-step-label.mat-step-label-active {
+      color: mat-color($foreground, text);
+    }
+  }
+
+  .mat-stepper-horizontal, .mat-stepper-vertical {
+    background-color: mat-color($background, card);
+  }
+
+  .mat-stepper-vertical-line::before {
+    border-left-color: mat-color($foreground, divider);
+  }
+
+  .mat-stepper-horizontal-line {
+    border-top-color: mat-color($foreground, divider);
+  }
+}
+
+@mixin mat-stepper-typography($config) {
+  .mat-stepper-vertical, .mat-stepper-horizontal {
+    font-family: mat-font-family($config);
+  }
+
+  .mat-step-label {
+    font: {
+      size: mat-font-size($config, body-1);
+      weight: mat-font-weight($config, body-1);
+    };
+  }
+
+  .mat-step-label-selected {
+    font: {
+      size: mat-font-size($config, body-2);
+      weight: mat-font-weight($config, body-2);
+    };
+  }
 }

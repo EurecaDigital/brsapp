@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UserService } from '../services/user.service';
+import { CepService } from "../services/cep.service";
+import { CepComponent } from "../cep/cep.component";
 import { ToastComponent } from '../shared/toast/toast.component';
 
 @Component({
@@ -9,6 +11,8 @@ import { ToastComponent } from '../shared/toast/toast.component';
   templateUrl: './register.component.html'
 })
 export class RegisterComponent implements OnInit {
+
+  isLinear = true;
 
   registerForm: FormGroup;
   username = new FormControl('', [
@@ -29,18 +33,106 @@ export class RegisterComponent implements OnInit {
   role = new FormControl('', [
     Validators.required
   ]);
+  sexo = new FormControl('', [
+    Validators.required
+  ]);
+  datanascimento = new FormControl('', [
+    Validators.required
+  ]);
+  celular = new FormControl('', [
+    Validators.required
+  ]);
+  duvidas = new FormControl('', [
+    Validators.required
+  ]);
+  perfil = new FormControl('', [
+    Validators.required
+  ]);
+  pessoas = new FormControl('', [
+    Validators.required
+  ]);
+  animais = new FormControl('', [
+    Validators.required
+  ]);
+  veiculos = new FormControl('', [
+    Validators.required
+  ]);
+  construcao = new FormControl('', [
+    Validators.required
+  ]);
+  ocupacao = new FormControl('', [
+    Validators.required
+  ]);
+  duvidasii = new FormControl('', [
+    Validators.required
+  ]);
+  opiniao = new FormControl('', [
+    Validators.required
+  ]);
+  comentario = new FormControl('', [
+    Validators.required
+  ]);
+  agradecimento = new FormControl('', [
+    Validators.required
+  ]);
+  cep = new FormControl('', [
+    Validators.required
+  ]);
+  bairro = new FormControl('', [
+    Validators.required
+  ]);
+  cidade = new FormControl('', [
+    Validators.required
+  ]);
+  logradouro = new FormControl('', [
+    Validators.required
+  ]);
+  complemento = new FormControl('', [
+    Validators.required
+  ]);
+  uf = new FormControl('', [
+    Validators.required
+  ]);
+  numero = new FormControl('', [
+    Validators.required
+  ]);
 
   constructor(private formBuilder: FormBuilder,
-              private router: Router,
-              public toast: ToastComponent,
-              private userService: UserService) { }
+    private cepService: CepService,
+    private router: Router,
+    public toast: ToastComponent,
+    private userService: UserService) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
       username: this.username,
       email: this.email,
       password: this.password,
-      role: this.role
+      role: this.role,
+
+      sexo: this.sexo,
+      datanascimento: this.datanascimento,
+      celular: this.celular,
+      duvidas: this.duvidas,
+      perfil: this.perfil,
+      pessoas: this.pessoas,
+      animais: this.animais,
+      veiculos: this.animais,
+      construcao: this.animais,
+      ocupacao: this.animais,
+      duvidasii: this.duvidasii,
+      opiniao: this.opiniao,
+      comentario: this.comentario,
+      agradecimento: this.comentario,
+      Cep: {
+        cep: this.cep,
+        logradouro: this.logradouro,
+        numero: this.numero,
+        complemento: this.complemento,
+        bairro: this.bairro,
+        cidade: this.cidade,
+        uf: this.uf
+      }
     });
   }
 
@@ -53,6 +145,7 @@ export class RegisterComponent implements OnInit {
   setClassPassword() {
     return { 'has-danger': !this.password.pristine && !this.password.valid };
   }
+
 
   register() {
     this.userService.register(this.registerForm.value).subscribe(

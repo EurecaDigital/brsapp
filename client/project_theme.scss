@@ -39,7 +39,7 @@ $mat-orange: (
 );
 
 $custom-theme-primary: mat-palette($mat-light-blue);
-$custom-theme-accent: mat-palette($mat-orange, A200, A100, A400);
+$custom-theme-accent: mat-palette($mat-orange, A700, A100, A400);
 $custom-theme-warn: mat-palette($mat-red);
 
 @function mat-palette($base-palette, $default: 500, $lighter: 100, $darker: 700) {
