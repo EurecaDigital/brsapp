@@ -5,47 +5,29 @@
     <h4>Acesse sua conta</h4>
 
 
-    <mat-horizontal-stepper [linear]="isLinear">
-      <mat-step [stepControl]="email">
-        <form [formGroup]="loginForm" (ngSubmit)="login()">
-          <ng-template matStepLabel>Digite seu email</ng-template>
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="email"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Email" formControlName="email" required>
-          </mat-form-field>
-          <div>
-            <button mat-button matStepperNext>Próximo</button>
-          </div>
-        </form>
-      </mat-step>
-      <mat-step [stepControl]="password">
-        <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-          <ng-template matStepLabel>Digite sua senha</ng-template>
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="password"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="password" formControlName="password" required>
-          </mat-form-field>
-          <div>
-            <button mat-button matStepperPrevious>Voltar</button>
-            <button mat-button matStepperNext>Próximo</button>
-          </div>
-        </form>
-      </mat-step>
+      <mat-form-field>
+        <span>
+          <mat-icon [class.primary]="email"></mat-icon>&nbsp;</span>
+        <input matInput placeholder="Email" formControlName="email" required>
+      </mat-form-field>
 
-      <mat-step>
-        <ng-template matStepLabel>Concluir</ng-template>
-        Conclua seu Login.
-        <div>
-    
+      <br/>
 
-            <button mat-button><i class="fa fa-login"></i> Login</button>
-          <button mat-button matStepperPrevious>Voltar</button>
-        </div>
-      </mat-step>
-    </mat-horizontal-stepper>
+      <mat-form-field>
+        <span>
+          <mat-icon [class.primary]="password"></mat-icon>&nbsp;</span>
+        <input matInput placeholder="password" formControlName="password" required>
+      </mat-form-field>
+
+      <br/>
+
+      <div>
+        <button mat-button>
+          <i class="fa fa-login"></i> Login</button>
+      </div>
+    </form>
 
   </mat-card-content>
 </mat-card>
