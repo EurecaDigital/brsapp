@@ -6,6 +6,8 @@ import { CatService } from './services/cat.service';
 import { CepService } from './services/cep.service';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
+import { MediaChange } from '@angular/flex-layout';
+import { ObservableMedia } from '@angular/flex-layout';
 
 import { AuthGuardLogin } from './services/auth-guard-login.service';
 import { AuthGuardAdmin } from './services/auth-guard-admin.service';

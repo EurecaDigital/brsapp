@@ -5,7 +5,7 @@
 
     <mat-sidenav-container class="all-wrap" fullscreen>
       <mat-sidenav #sidenav>
-        <mat-toolbar color="primary">
+        <mat-toolbar color="primary" opened="false">
 
           <section>
             <a href="#">
@@ -15,15 +15,15 @@
           </section>
         </mat-toolbar>
         <mat-list>
-          <mat-list-item [routerLink]="['./']"> Dashboard</mat-list-item>
-          <mat-list-item routerLink="/register" routerLinkActive="active"> Colaboradores</mat-list-item>
-          <mat-list-item [routerLink]="['/anunciantes']"> Anunciantes</mat-list-item>
-          <mat-list-item [routerLink]="['/login']"> Anúncios</mat-list-item>
-          <mat-list-item [routerLink]="['/usuarios']"> Usuários</mat-list-item>
-          <mat-list-item [routerLink]="['/depoimentos']"> Depoimentos</mat-list-item>
-          <mat-list-item [routerLink]="['/parametrizacao']"> Parametrização</mat-list-item>
-          <mat-list-item [routerLink]="['/register']"> Novo</mat-list-item>
-          <mat-list-item [routerLink]="['/login']"> Login</mat-list-item>
+          <mat-list-item [routerLink]="['./']" (click)="sidenav.close()" *ngIf="!auth.loggedIn"> Dashboard</mat-list-item>
+          <mat-list-item routerLink="/register" (click)="sidenav.close()" routerLinkActive="active" *ngIf="!auth.loggedIn"> Colaboradores</mat-list-item>
+          <mat-list-item [routerLink]="['/anunciantes']" (click)="sidenav.close()" *ngIf="!auth.loggedIn"> Anunciantes</mat-list-item>
+          <mat-list-item [routerLink]="['/login']" (click)="sidenav.close()" *ngIf="!auth.loggedIn"> Anúncios</mat-list-item>
+          <mat-list-item [routerLink]="['/usuarios']" (click)="sidenav.close()" *ngIf="!auth.loggedIn"> Usuários</mat-list-item>
+          <mat-list-item [routerLink]="['/depoimentos']" (click)="sidenav.close()"> Depoimentos</mat-list-item>
+          <mat-list-item [routerLink]="['/parametrizacao']" (click)="sidenav.close()" *ngIf="!auth.loggedIn"> Parametrização</mat-list-item>
+          <mat-list-item [routerLink]="['/register']" (click)="sidenav.close()"> Novo</mat-list-item>
+          <mat-list-item [routerLink]="['/login']" (click)="sidenav.close()" *ngIf="!auth.loggedOut"> Login</mat-list-item>
         </mat-list>
       </mat-sidenav>
 
@@ -34,9 +34,7 @@
               <mat-icon class="mat-icon">menu</mat-icon>
             </button>
             <section>
-              <a href="#">
-                <img src="/assets/nav_logo_Bairro_Social.png" alt="Bairro Social">
-              </a>
+              <a href="#"><img src="/assets/nav_logo_Bairro_Social.png" alt="Bairro Social"></a>
               <span style="padding-left:10px">Bairro Social</span>
             </section>
             <span class="example-spacer"></span>
