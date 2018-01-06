@@ -14,6 +14,8 @@ var userSchema = new mongoose.Schema({
         complemento: String,
         cidade: String,
         bairro: String,
+        id_cidade: String,
+        id_bairro: String,
         uf: String
     },
     sexo: String,
