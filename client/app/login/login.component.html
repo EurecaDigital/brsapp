@@ -2,26 +2,28 @@
 <mat-card>
   <mat-card-content>
 
-    <h4>Acesse sua conta</h4>
+      <mat-card-subtitle>Acesse sua conta</mat-card-subtitle>
 
 
     <form [formGroup]="loginForm" (ngSubmit)="login()">
 
-      <mat-form-field>
-        <span>
-          <mat-icon [class.primary]="email"></mat-icon>&nbsp;</span>
-        <input matInput placeholder="Email" formControlName="email" required>
-      </mat-form-field>
-
-      <br/>
-
-      <mat-form-field>
-        <span>
-          <mat-icon [class.primary]="password"></mat-icon>&nbsp;</span>
-        <input matInput placeholder="password" formControlName="password" required>
-      </mat-form-field>
-
-      <br/>
+        <div flex fxLayout="row" fxLayout.lt-sm="column">
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+                <mat-form-field>
+                    <span>
+                      <mat-icon [class.primary]="email"></mat-icon>&nbsp;</span>
+                    <input matInput placeholder="Email" formControlName="email" required>
+                  </mat-form-field>
+            </div>
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+                <mat-form-field>
+                    <span>
+                      <mat-icon [class.primary]="password"></mat-icon>&nbsp;</span>
+                    <input matInput placeholder="password" formControlName="password" required>
+                  </mat-form-field>
+            </div>
+            <div class="col-md-6 col-sm-12" fxFlex="30%"></div>
+        </div>
 
       <div>
         <button mat-button>

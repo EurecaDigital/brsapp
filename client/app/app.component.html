@@ -23,7 +23,7 @@
           <mat-list-item [routerLink]="['/depoimentos']" (click)="sidenav.close()"> Depoimentos</mat-list-item>
           <mat-list-item [routerLink]="['/parametrizacao']" (click)="sidenav.close()" *ngIf="!auth.loggedIn"> Parametrização</mat-list-item>
           <mat-list-item [routerLink]="['/register']" (click)="sidenav.close()"> Novo</mat-list-item>
-          <mat-list-item [routerLink]="['/login']" (click)="sidenav.close()" *ngIf="!auth.loggedOut"> Login</mat-list-item>
+          <mat-list-item [routerLink]="['/login']" (click)="sidenav.close()"> Login</mat-list-item>
         </mat-list>
       </mat-sidenav>
 

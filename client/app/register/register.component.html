@@ -4,7 +4,7 @@
 <mat-card>
   <mat-card-content>
 
-    <h4>Colaboradores</h4>
+    <mat-card-subtitle>Colaboradores</mat-card-subtitle>
 
     <mat-horizontal-stepper [linear]="isLinear">
 
@@ -13,72 +13,85 @@
         <form [formGroup]="registerForm" (ngSubmit)="register()">
           <ng-template matStepLabel>Identificação</ng-template>
 
-          <mat-form-field>
-            <input matInput placeholder="Sexo" formControlName="sexo">
-          </mat-form-field>
+          <div flex fxLayout="row" fxLayout.lt-sm="column">
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="email"></mat-icon>&nbsp;</span>
+                <input matInput placeholder="Email" formControlName="email" required>
+                <mat-error>*</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="password"></mat-icon>&nbsp;</span>
+                <input matInput type="password" placeholder="Senha" formControlName="password" required>
+                <mat-error>*</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-md-2 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="username"></mat-icon>&nbsp;</span>
+                <input matInput placeholder="Nome" formControlName="username" required>
+                <mat-error>*</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
 
-          <br/>
+          <div flex fxLayout="row" fxLayout.lt-sm="column">
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <mat-select placeholder="Tipo Usuario" [formControl]="role">
+                  <mat-option value="">Tipo</mat-option>
+                  <mat-option value="user">Usuario</mat-option>
+                  <mat-option value="admin">Colaborador</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <mat-select placeholder="Sexo" [formControl]="sexo">
+                  <mat-option value="">Tipo</mat-option>
+                  <mat-option value="masculino">MAsculino</mat-option>
+                  <mat-option value="feminino">Feminino</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="datanascimento"></mat-icon>&nbsp;</span>
+                <input matInput placeholder="Data Nascimento" formControlName="datanascimento" required>
+                <mat-error>*</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
 
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="email"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Nome" formControlName="email" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
+          <div flex fxLayout="row" fxLayout.lt-sm="column">
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="celular"></mat-icon>&nbsp;</span>
+                <input matInput placeholder="Nro.Celular" formControlName="celular" required>
+                <mat-error>*</mat-error>
+              </mat-form-field>
+            </div>
 
-          <br/>
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="duvidas"></mat-icon>&nbsp;</span>
+                <input matInput placeholder="Dúvidas/Por que?" formControlName="duvidas" required>
+                <mat-error>*</mat-error>
+              </mat-form-field>
+            </div>
 
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="password"></mat-icon>&nbsp;</span>
-            <input matInput type="password" placeholder="Senha" formControlName="password" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
 
-          <br/>
-
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="username"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Nome" formControlName="username" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
-
-          <br/>
-
-          <mat-form-field>
-            <mat-select placeholder="Tipo Usuario" [formControl]="role">
-              <mat-option value="">Tipo</mat-option>
-              <mat-option value="user">Usuario</mat-option>
-              <mat-option value="admin">Colaborador</mat-option>
-            </mat-select>
-          </mat-form-field>
-
-          <br/>
-
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="datanascimento"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Data Nascimento" formControlName="datanascimento" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
-
-          <br/>
-
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="celular"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Nro.Celular" formControlName="celular" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
-          <br/>
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="duvidas"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Dúvidas/Por que?" formControlName="duvidas" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
-
+            </div>
+          </div>
 
           <div color="primary">
             <button mat-button matStepperNext>Próximo</button>
@@ -87,71 +100,72 @@
 
       </mat-step>
 
-      <br/>
       <mat-step [stepControl]="cep">
         <ng-template matStepLabel>Endereço</ng-template>
-        <app-cep></app-cep> 
+        <app-cep></app-cep>
       </mat-step>
-      <br/>
 
       <mat-step [stepControl]="password">
         <form [formGroup]="registerForm" (ngSubmit)="register()">
 
           <ng-template matStepLabel>Perfil</ng-template>
+          <div flex fxLayout="row" fxLayout.lt-sm="column">
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="pessoas"></mat-icon>&nbsp;</span>
+                <input matInput placeholder="As pessoas que moram..." formControlName="perfil" required>
+                <mat-error>*</mat-error>
+              </mat-form-field>
+            </div>
 
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="pessoas"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="As pessoas que moram..." formControlName="perfil" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="animais"></mat-icon>&nbsp;</span>
+                <input matInput placeholder="Animais de estimação..." formControlName="perfil" required>
+                <mat-error>*</mat-error>
+              </mat-form-field>
+            </div>
 
-          <br/>
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="veiculos"></mat-icon>&nbsp;</span>
+                <input matInput placeholder="Carros e Motos..." formControlName="veiculos" required>
+                <mat-error>*</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
 
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="animais"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Animais de estimação..." formControlName="perfil" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
+          <div flex fxLayout="row" fxLayout.lt-sm="column">
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="construcao"></mat-icon>&nbsp;</span>
+                <input matInput placeholder="Construir ou Reformar..." formControlName="construcao" required>
+                <mat-error>*</mat-error>
+              </mat-form-field>
+            </div>
 
-          <br/>
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="ocupacao"></mat-icon>&nbsp;</span>
+                <input matInput placeholder="Sua ocupacao..." formControlName="ocupacao" required>
+                <mat-error>*</mat-error>
+              </mat-form-field>
+            </div>
 
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="veiculos"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Carros e Motos..." formControlName="veiculos" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
-
-          <br/>
-
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="construcao"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Construir ou Reformar..." formControlName="construcao" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
-
-          <br/>
-
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="ocupacao"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Sua ocupacao..." formControlName="ocupacao" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
-
-          <br/>
-
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="duvidasii"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Dúvidas/Por que?..." formControlName="duvidasii" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
-
-          <br/>
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="duvidasii"></mat-icon>&nbsp;</span>
+                <input matInput placeholder="Dúvidas/Por que?..." formControlName="duvidasii" required>
+                <mat-error>*</mat-error>
+              </mat-form-field>
+            </div>
+          </div>
 
           <div>
             <button mat-button matStepperPrevious>Voltar</button>
@@ -165,21 +179,30 @@
         Muito bom poder contar com você na implantação deste projeto que visa um bairro melhor. O que acha do projeto.
 
         <form [formGroup]="registerForm" (ngSubmit)="register()">
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="opiniao"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="O que acha do projeto?..." formControlName="opiniao" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
 
-          <br/>
+          <div flex fxLayout="row" fxLayout.lt-sm="column">
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="opiniao"></mat-icon>&nbsp;</span>
+                <input matInput placeholder="O que acha do projeto?..." formControlName="opiniao" required>
+                <mat-error>*</mat-error>
+              </mat-form-field>
+            </div>
 
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="comentario"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Deseja fazer comentário?..." formControlName="comentario" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
+            <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="comentario"></mat-icon>&nbsp;</span>
+                <input matInput placeholder="Deseja fazer comentário?..." formControlName="comentario" required>
+                <mat-error>*</mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-6 col-sm-12" fxFlex="30%"></div>
+          </div>
+
+
         </form>
 
 

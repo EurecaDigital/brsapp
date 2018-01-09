@@ -15,11 +15,13 @@
         <form [formGroup]="registerForm" (ngSubmit)="register()">
           <ng-template matStepLabel>Identificação</ng-template>
 
+          
           <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="sexo.focused"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Sexo" formControlName="sexo" required>
-            <mat-error>*</mat-error>
+            <mat-select placeholder="Sexo" [formControl]="sexo">
+              <mat-option value="">Tipo</mat-option>
+              <mat-option value="masculino">Masculino</mat-option>
+              <mat-option value="feminino">Feminino</mat-option>
+            </mat-select>
           </mat-form-field>
 
           <br/>
