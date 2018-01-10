@@ -32,7 +32,7 @@ body {
   color: #FFFFFF;
 }
 
-md-stepper .horizontal md-step .step-header {
+mat-stepper .horizontal mat-step .step-header {
   display: none;
 }
 
@@ -81,11 +81,10 @@ mat-stepper .vertical mat-step .step-content {
 
 .mat-sidenav {
 
-;  z-index:1000;
+  z-index:1000;
   top:0;
   box-shadow:2px 0px 10px grey;
   flex-shrink: 0;
-  /*background-color: #97550B ;*/
   overflow-x: hidden;
   &:not(.cover) {
       width: 250px; 
@@ -145,7 +144,7 @@ main {
 .example-container {
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: relative;
   top: 0;
   bottom: 0;
   left: 0;
@@ -302,4 +301,363 @@ mat-card-actions {
       weight: mat-font-weight($config, body-2);
     };
   }
+}
+
+
+// height of tile header or footer if it has one line
+$mat-grid-list-one-line-height: 48px;
+// height of tile header or footer if it has two lines
+$mat-grid-list-two-line-height: 68px;
+// side padding for text in tile headers and footers
+$mat-grid-list-text-padding: 16px;
+
+.mat-grid-list {
+  display: block;
+  position: relative;
+}
+
+.mat-grid-tile {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+
+  .mat-figure {
+    @include mat-fill;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+    padding: 0;
+    margin: 0;
+  }
+
+  // Headers & footers
+  .mat-grid-tile-header,
+  .mat-grid-tile-footer {
+    @include mat-normalize-text();
+
+    display: flex;
+    align-items: center;
+    height: $mat-grid-list-one-line-height;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.38);
+    overflow: hidden;
+    padding: 0 $mat-grid-list-text-padding;
+
+    // Positioning
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    &.mat-2-line {
+      height: $mat-grid-list-two-line-height;
+    }
+  }
+
+  .mat-grid-list-text {
+    @include mat-line-wrapper-base();
+  }
+
+  .mat-grid-tile-header {
+    top: 0;
+  }
+
+  .mat-grid-tile-footer {
+    bottom: 0;
+  }
+
+  .mat-grid-avatar {
+    padding-right: $mat-grid-list-text-padding;
+
+    [dir='rtl'] & {
+      padding-right: 0;
+      padding-left: $mat-grid-list-text-padding;
+    }
+
+    &:empty {
+      display:none;
+    }
+  }
+}
+
+
+// Min amount of space between start and end hint.
+$mat-form-field-hint-min-space: 1em !default;
+// The height of the underline.
+$mat-form-field-underline-height: 1px !default;
+// Infix stretches to fit the container, but naturally wants to be this wide. We set this in order
+// to have a a consistent natural size for the various types of controls that can go in a form
+// field.
+$mat-form-field-default-infix-width: 180px !default;
+
+
+.mat-form-field {
+  display: inline-block;
+  position: relative;
+
+  /* To avoid problems with text-align.*/
+  text-align: left;
+
+  [dir='rtl'] & {
+    text-align: right;
+  }
+}
+
+/** Global wrapper. We need to apply margin to the element for spacing, but
+// cannot apply it to the host element directly.**/
+.mat-form-field-wrapper {
+  position: relative;
+}
+
+/** We use a flex layout to baseline align the prefix and suffix elements.
+// The underline is outside of it so it can cover all of the elements under this flex container.**/
+.mat-form-field-flex {
+  display: inline-flex;
+  align-items: baseline;
+  width: 100%;
+}
+
+.mat-form-field-prefix,
+.mat-form-field-suffix {
+  white-space: nowrap;
+  flex: none;
+
+  /*Allow icons in a prefix or suffix to adapt to the correct size.*/ 
+  .mat-icon {
+    width: 1em;
+  }
+
+  /*Allow icon buttons in a prefix or suffix to adapt to the correct size.*/ 
+  .mat-icon-button {
+    font: inherit;
+    vertical-align: baseline;
+
+    .mat-icon {
+      font-size: inherit;
+    }
+  }
+}
+
+.mat-form-field-infix {
+  display: block;
+  position: relative;
+  flex: auto;
+  min-width: 0;
+  width: $mat-form-field-default-infix-width;
+}
+
+/** Used to hide the label overflow on IE, since IE doesn't take transform into account when
+// determining overflow.**/
+.mat-form-field-label-wrapper {
+  position: absolute;
+  left: 0;
+  box-sizing: content-box;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;  // We shouldn't catch mouse events (let them through).
+}
+
+// The label itself. This is invisible unless it is. The logic to show it is
+// basically `empty || (float && (!empty || focused))`. Float is dependent on the
+// `floatingPlaceholder` property.
+.mat-form-field-label {
+  // The label is after the form field control, but needs to be aligned top-left of the infix <div>.
+  position: absolute;
+  left: 0;
+
+  font: inherit;
+  pointer-events: none;  // We shouldn't catch mouse events (let them through).
+
+  /*Put ellipsis text overflow.*/ 
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  /* The perspective helps smooth out animations on Chrome and Firefox but isn't needed on IE.*/
+  transform: perspective(100px);
+  -ms-transform: none;
+
+  transform-origin: 0 0;
+  transition: transform $swift-ease-out-duration $swift-ease-out-timing-function,
+  color $swift-ease-out-duration $swift-ease-out-timing-function,
+  width $swift-ease-out-duration $swift-ease-out-timing-function;
+
+  /* Hide the label initially, and only show it when it's floating or the control is empty.*/
+  display: none;
+
+  [dir='rtl'] & {
+    transform-origin: 100% 0;
+    left: auto;
+    right: 0;
+  }
+}
+
+.mat-form-field-empty.mat-form-field-label,
+.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+  display: block;
+}
+
+/** Pseudo-class for Chrome and Safari auto-fill to move the label to the floating position.
+ This is necessary because these browsers do not actually fire any events when a form auto-fill is
+ occurring. Once the autofill is committed, a change event happen and the regular mat-form-field
+ classes take over to fulfill this behaviour.**/
+
+ .mat-form-field-autofill-control:-webkit-autofill + .mat-form-field-label-wrapper
+    .mat-form-field-label {
+  /** The form field will be considered empty if it is autofilled, and therefore the label will**/
+  /** be shown. Therefore we need to override it to hidden...**/
+  display: none;
+
+  /*...and re-show it only if it's able to float.*/ 
+  .mat-form-field-can-float & {
+    display: block;
+    transition: none;
+  }
+}
+
+/** Server-side rendered matInput with focus or a placeholder attribute but placeholder not shown
+// (used as a pure CSS stand-in for mat-form-field-should-float).
+.mat-input-server:focus + .mat-form-field-placeholder-wrapper .mat-form-field-placeholder,
+.mat-input-server[placeholder]:not(:placeholder-shown) + .mat-form-field-placeholder-wrapper**/
+    .mat-form-field-placeholder {
+  display: none;
+
+  .mat-form-field-can-float & {
+    display: block;
+  }
+}
+
+/*Disable the label animation when the control is not empty (this prevents label*/ 
+/*animating up when the value is set programmatically).*/ 
+.mat-form-field-label:not(.mat-form-field-empty) {
+  transition: none;
+}
+
+/*The underline is what's shown under the control, its prefix and its suffix.*/ 
+/*The ripple is the blue animation coming on top of it.*/ 
+.mat-form-field-underline {
+  position: absolute;
+  height: $mat-form-field-underline-height;
+  width: 100%;
+
+  .mat-form-field-disabled & {
+    background-position: 0;
+    background-color: transparent;
+  }
+
+  .mat-form-field-ripple {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: $mat-form-field-underline-height * 2;
+    transform-origin: 50%;
+    transform: scaleX(0.5);
+    visibility: hidden;
+    opacity: 0;
+    transition: background-color $swift-ease-in-duration $swift-ease-in-timing-function;
+
+    .mat-form-field-invalid:not(.mat-focused) & {
+      height: $mat-form-field-underline-height;
+    }
+
+    .mat-focused &,
+    .mat-form-field-invalid & {
+      visibility: visible;
+      opacity: 1;
+      transform: scaleX(1);
+      transition: transform 300ms $swift-ease-out-timing-function,
+        opacity 100ms $swift-ease-out-timing-function,
+        background-color 300ms $swift-ease-out-timing-function;
+    }
+  }
+}
+
+/*Wrapper for the hints and error messages.*/ 
+.mat-form-field-subscript-wrapper {
+  position: absolute;
+  width: 100%;
+  overflow: hidden; // prevents multi-line errors from overlapping the control
+}
+
+/*Scale down icons in the label and hint to be the same size as the text.*/ 
+.mat-form-field-subscript-wrapper,
+.mat-form-field-label-wrapper {
+  .mat-icon {
+    width: 1em;
+    height: 1em;
+    font-size: inherit;
+    vertical-align: baseline;
+  }
+}
+
+/*Clears the floats on the hints. This is necessary for the hint animation to work.*/ 
+.mat-form-field-hint-wrapper {
+  display: flex;
+}
+
+/*Spacer used to make sure start and end hints have enough space between them.*/ 
+.mat-form-field-hint-spacer {
+  flex: 1 0 $mat-form-field-hint-min-space;
+}
+
+/*Single error message displayed beneath the form field underline.*/ 
+.mat-error {
+  display: block;
+}
+
+
+
+
+
+@mixin mat-input-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $foreground: map-get($theme, foreground);
+
+  .mat-input-element:disabled {
+    color: mat-color($foreground, disabled-text);
+  }
+
+  .mat-input-element {
+    caret-color: mat-color($primary);
+
+    @include input-placeholder {
+      color: _mat-control-placeholder-color($theme);
+    }
+  }
+
+  .mat-accent .mat-input-element {
+    caret-color: mat-color($accent);
+  }
+
+  .mat-warn .mat-input-element,
+  .mat-form-field-invalid .mat-input-element {
+    caret-color: mat-color($warn);
+  }
+}
+
+@mixin mat-input-typography($config) {
+  // The unit-less line-height from the font config.
+  $line-height: mat-line-height($config, input);
+
+  // The amount of space between the top of the line and the top of the actual text
+  // (as a fraction of the font-size).
+  $line-spacing: ($line-height - 1) / 2;
+
+  // <input> elements seem to have their height set slightly too large on Safari causing the text to
+  // be misaligned w.r.t. the placeholder. Adding this margin corrects it.
+  input.mat-input-element {
+    margin-top: -$line-spacing * 1em;
+  }
+}
+
+/deep/ .mat-input-underline {
+  background-color: rgb(47, 0, 255);    /* replace this color with your accent color hex code */
+width: 90%;
 }

@@ -1,17 +1,18 @@
 <app-toast [message]="toast.message"></app-toast>
 
-
 <mat-card>
   <mat-card-content>
 
     <mat-card-subtitle>Colaboradores</mat-card-subtitle>
+
 
     <mat-horizontal-stepper [linear]="isLinear">
 
       <mat-step [stepControl]="email">
 
         <form [formGroup]="registerForm" (ngSubmit)="register()">
-          <ng-template matStepLabel>Identificação</ng-template>
+          <ng-template matStepLabel>>></ng-template>
+          <mat-card-subtitle>Identificação</mat-card-subtitle>
 
           <div flex fxLayout="row" fxLayout.lt-sm="column">
             <div class="col-md-6 col-sm-12" fxFlex="30%">
@@ -101,14 +102,16 @@
       </mat-step>
 
       <mat-step [stepControl]="cep">
-        <ng-template matStepLabel>Endereço</ng-template>
-        <app-cep></app-cep>
+        <ng-template matStepLabel>>></ng-template>
+        <mat-card-subtitle>Endereço</mat-card-subtitle>
+      <app-cep></app-cep>
       </mat-step>
 
       <mat-step [stepControl]="password">
         <form [formGroup]="registerForm" (ngSubmit)="register()">
 
-          <ng-template matStepLabel>Perfil</ng-template>
+          <ng-template matStepLabel>>></ng-template>
+          <mat-card-subtitle>Perfil</mat-card-subtitle>
           <div flex fxLayout="row" fxLayout.lt-sm="column">
             <div class="col-md-6 col-sm-12" fxFlex="30%">
               <mat-form-field>
@@ -175,8 +178,9 @@
       </mat-step>
 
       <mat-step [stepControl]="agradecimento">
-        <ng-template matStepLabel>Agradecimentos</ng-template>
-        Muito bom poder contar com você na implantação deste projeto que visa um bairro melhor. O que acha do projeto.
+        <ng-template matStepLabel>...</ng-template>
+        <mat-card-subtitle>Agradecimentos</mat-card-subtitle>
+      Muito bom poder contar com você na implantação deste projeto que visa um bairro melhor. O que acha do projeto.
 
         <form [formGroup]="registerForm" (ngSubmit)="register()">
 

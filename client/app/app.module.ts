@@ -40,6 +40,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule, MatInputModule } from "@angular/material"; 
+import { MatGridListModule } from "@angular/material"; 
 
 
 /*
@@ -89,6 +90,7 @@ const MATERIAL_MODULES = [
   MatSelectModule,
   MatStepperModule,
   MatFormFieldModule,
+  MatGridListModule,
   MatInputModule
   
   /* 
