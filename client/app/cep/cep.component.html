@@ -3,34 +3,36 @@
 
     <form [formGroup]="cepForm">
       <div flex fxLayout="row" fxLayout.lt-sm="column">
-        <div class="col-md-6 col-sm-12" fxFlex="30%">
+        <div class="col-md-6 col-sm-12" fxFlex="50%">
           <mat-form-field>
             <span>
-              <mat-icon [class.primary]="cep"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="000000-000" formControlName="cep">
+              <mat-icon [class.primary]="cep"></mat-icon>Cep :{{ cep.cep }}</span>
+              
+            <input matInput placeholder='Cep' formControlName='cep' [(ngModel)]='cep.cep'>
             <mat-error>*</mat-error>
           </mat-form-field>
         </div>
-        <div class="col-md-6 col-sm-12" fxFlex="30%">
+        <div class="col-md-6 col-sm-12" fxFlex="50%">
           <div color="primary">
-            <button mat-button (click)="getCeps(cep)">Buscar</button>
+            <button mat-button (click)="getCep(cep.cep)">Buscar : </button>
+           
           </div>
         </div>
       </div>
 
       <div flex fxLayout="row" fxLayout.lt-sm="column">
         <div class="col-md-6 col-sm-12" fxFlex="30%">
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="cidade"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Cidade" formControlName="cidade" required [disabled]>
-            <mat-error>*</mat-error>
-          </mat-form-field>
+            <mat-form-field>
+                <span>
+                  <mat-icon [class.primary]="localidade"></mat-icon>&nbsp;</span>
+                <input matInput placeholder="Cidade" formControlName="localidade" [(ngModel)]="cep.localidade" [disabled]>
+                <mat-error>*</mat-error>
+              </mat-form-field>
         </div>
 
         <div class="col-md-6 col-sm-12" fxFlex="30%">
           <mat-form-field>
-            <mat-select placeholder="Estado" [formControl]="uf">
+            <mat-select placeholder="Estado" [formControl]="uf"  [(ngModel)]="cep.uf" [disabled]>
 
 
               <mat-option value="">Estados</mat-option>
@@ -68,7 +70,7 @@
           <mat-form-field>
             <span>
               <mat-icon [class.primary]="logradouro"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Logradouro" formControlName="logradouro" [disabled]>
+            <input matInput placeholder="Logradouro" formControlName="logradouro" [(ngModel)]="cep.logradouro" [disabled]>
             <mat-error>*</mat-error>
           </mat-form-field>
         </div>
@@ -79,7 +81,7 @@
           <mat-form-field>
             <span>
               <mat-icon [class.primary]="numero"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Número" formControlName="numero" required>
+            <input matInput placeholder="Número" formControlName="numero" [(ngModel)]="cep.numero" required>
             <mat-error>*</mat-error>
           </mat-form-field>
         </div>
@@ -87,7 +89,7 @@
           <mat-form-field>
             <span>
               <mat-icon [class.primary]="complemento"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Complemento" formControlName="complemento" required>
+            <input matInput placeholder="Complemento" formControlName="complemento" [(ngModel)]="cep.complemento" required>
             <mat-error>*</mat-error>
             <mat-error>*</mat-error>
           </mat-form-field>
@@ -96,7 +98,7 @@
           <mat-form-field>
             <span>
               <mat-icon [class.primary]="bairro"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Bairro" formControlName="bairro" required>
+            <input matInput placeholder="Bairro" formControlName="bairro" [(ngModel)]="cep.bairro" required>
             <mat-error>*</mat-error>
             <mat-error>*</mat-error>
           </mat-form-field>

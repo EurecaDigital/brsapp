@@ -1,4 +1,4 @@
-class Cep{
+export class Cep{
     cep:String;
     logradouro:String;
     numero:String;

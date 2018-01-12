@@ -4,10 +4,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 import { CepService } from '../services/cep.service';
 import { UserService } from '../services/user.service';
 import { ToastComponent } from '../shared/toast/toast.component';
-
-
-
-
+import { Cep } from "../services/cep";
 
 
 @Component({
@@ -32,7 +29,7 @@ export class CepComponent implements OnInit {
   bairro = new FormControl('', [
     Validators.required
   ]);
-  cidade = new FormControl('', [
+  localidade = new FormControl('', [
     Validators.required
   ]);
   logradouro = new FormControl('', [
@@ -48,9 +45,6 @@ export class CepComponent implements OnInit {
     Validators.required
   ]);
 
-
-
-
   constructor(private cepService: CepService,
     private userService: UserService,
     private formBuilder: FormBuilder,
@@ -59,27 +53,25 @@ export class CepComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getUsers();
+    
     this.cepForm = this.formBuilder.group({
       cep: this.cep,
       logradouro: this.logradouro,
       numero: this.numero,
       complemento: this.complemento,
       bairro: this.bairro,
-      cidade: this.cidade,
+      localidade: this.localidade,
       uf: this.uf
     });
   }
 
-  getCeps(cep) {
-    this.cepService.getCeps(this.cep)
-  }
-
-  getUsers() {
-    this.userService.getUsers().subscribe(
-      data => this.users = data,
+  getCep(cep) {
+    console.log('teste:'+ cep);
+    this.cepService.getCep(cep).subscribe(
+      data => this.cep = data,
       error => console.log(error),
       () => this.isLoading = false
     );
   }
+
 }

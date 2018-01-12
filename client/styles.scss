@@ -5,6 +5,7 @@
 body {
   margin-top: 0px;
   margin-bottom: 10px;
+  font-size: 10px;
 }
 
 
@@ -13,6 +14,8 @@ body {
   vertical-align: -22%;
   height: 18px;
   width: 18px;
+  font-size: 10px;
+  
 };
 
 .mat-toolbar {
@@ -34,6 +37,7 @@ body {
 
 mat-stepper .horizontal mat-step .step-header {
   display: none;
+  font-size: 10px;
 }
 
 .step-header {
@@ -47,11 +51,13 @@ mat-stepper .horizontal mat-step .step-header {
 
 .step-content {
   padding: 10px;
+  font-size: 10px;
 }
 
 mat-stepper .vertical mat-step .step-content {
   margin: 0 0 0 20px;
   border-left: 1px solid #e0e0e0;
+  font-size: 10px;
 }
 
 .step-header .line {
@@ -171,6 +177,7 @@ main {
 
 mat-card {
   margin: 15px;
+  font-size: 10px;
 }
 mat-card-title {
   margin-bottom: 50px;
@@ -183,6 +190,17 @@ mat-card-actions {
 }
 .full-width {
   width: 100%;
+}
+
+.mat-form-field-infix {
+  display: block;
+  position: relative;
+  -webkit-box-flex: 1;
+  -ms-flex: auto;
+  flex: auto;
+  font-size: 12px;
+  min-width: 0;
+  width: 180px;
 }
 
 .mat-radio-group, .checkbox-container {
@@ -253,6 +271,7 @@ mat-card-actions {
     .mat-step-label,
     .mat-step-optional {
       color: mat-color($foreground, disabled-text);
+      font-size: 10px;
     }
 
     .mat-step-icon {
@@ -263,15 +282,18 @@ mat-card-actions {
     .mat-step-icon-not-touched {
       background-color: mat-color($foreground, disabled-text);
       color: mat-color($primary, default-contrast);
+      font-size: 10px;
     }
 
     .mat-step-label.mat-step-label-active {
       color: mat-color($foreground, text);
+      font-size: 10px;
     }
   }
 
   .mat-stepper-horizontal, .mat-stepper-vertical {
     background-color: mat-color($background, card);
+    font-size: 10px;
   }
 
   .mat-stepper-vertical-line::before {
@@ -286,14 +308,20 @@ mat-card-actions {
 @mixin mat-stepper-typography($config) {
   .mat-stepper-vertical, .mat-stepper-horizontal {
     font-family: mat-font-family($config);
+    font-size: 10px;
   }
 
   .mat-step-label {
     font: {
       size: mat-font-size($config, body-1);
       weight: mat-font-weight($config, body-1);
+      font-size: 10px;
     };
   }
+
+  .div {
+    font-size: 10px;
+}
 
   .mat-step-label-selected {
     font: {
@@ -396,6 +424,7 @@ $mat-form-field-default-infix-width: 180px !default;
 .mat-form-field {
   display: inline-block;
   position: relative;
+  font-size: 11px !important;
 
   /* To avoid problems with text-align.*/
   text-align: left;
@@ -423,6 +452,7 @@ $mat-form-field-default-infix-width: 180px !default;
 .mat-form-field-suffix {
   white-space: nowrap;
   flex: none;
+  font-size: inherit;
 
   /*Allow icons in a prefix or suffix to adapt to the correct size.*/ 
   .mat-icon {
@@ -444,6 +474,7 @@ $mat-form-field-default-infix-width: 180px !default;
   display: block;
   position: relative;
   flex: auto;
+  font-size: inherit;
   min-width: 0;
   width: $mat-form-field-default-infix-width;
 }
@@ -456,6 +487,7 @@ $mat-form-field-default-infix-width: 180px !default;
   box-sizing: content-box;
   width: 100%;
   height: 100%;
+  font-size: inherit;
   overflow: hidden;
   pointer-events: none;  // We shouldn't catch mouse events (let them through).
 }
@@ -499,6 +531,7 @@ $mat-form-field-default-infix-width: 180px !default;
 .mat-form-field-empty.mat-form-field-label,
 .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
   display: block;
+  font-size: inherit;
 }
 
 /** Pseudo-class for Chrome and Safari auto-fill to move the label to the floating position.
@@ -511,6 +544,7 @@ $mat-form-field-default-infix-width: 180px !default;
   /** The form field will be considered empty if it is autofilled, and therefore the label will**/
   /** be shown. Therefore we need to override it to hidden...**/
   display: none;
+  font-size: inherit;
 
   /*...and re-show it only if it's able to float.*/ 
   .mat-form-field-can-float & {
@@ -528,6 +562,7 @@ $mat-form-field-default-infix-width: 180px !default;
 
   .mat-form-field-can-float & {
     display: block;
+    font-size: inherit;
   }
 }
 
@@ -540,6 +575,7 @@ $mat-form-field-default-infix-width: 180px !default;
 /*The underline is what's shown under the control, its prefix and its suffix.*/ 
 /*The ripple is the blue animation coming on top of it.*/ 
 .mat-form-field-underline {
+  font-size: inherit;
   position: absolute;
   height: $mat-form-field-underline-height;
   width: 100%;
@@ -570,6 +606,7 @@ $mat-form-field-default-infix-width: 180px !default;
       visibility: visible;
       opacity: 1;
       transform: scaleX(1);
+      font-size: inherit;
       transition: transform 300ms $swift-ease-out-timing-function,
         opacity 100ms $swift-ease-out-timing-function,
         background-color 300ms $swift-ease-out-timing-function;
@@ -622,9 +659,11 @@ $mat-form-field-default-infix-width: 180px !default;
 
   .mat-input-element:disabled {
     color: mat-color($foreground, disabled-text);
+    font-size: inherit;
   }
 
   .mat-input-element {
+    font-size: inherit;
     caret-color: mat-color($primary);
 
     @include input-placeholder {
@@ -633,16 +672,19 @@ $mat-form-field-default-infix-width: 180px !default;
   }
 
   .mat-accent .mat-input-element {
+    font-size: inherit;
     caret-color: mat-color($accent);
   }
 
   .mat-warn .mat-input-element,
   .mat-form-field-invalid .mat-input-element {
     caret-color: mat-color($warn);
+    font-size: inherit;
   }
 }
 
 @mixin mat-input-typography($config) {
+  font-size: inherit;
   // The unit-less line-height from the font config.
   $line-height: mat-line-height($config, input);
 
@@ -653,6 +695,7 @@ $mat-form-field-default-infix-width: 180px !default;
   // <input> elements seem to have their height set slightly too large on Safari causing the text to
   // be misaligned w.r.t. the placeholder. Adding this margin corrects it.
   input.mat-input-element {
+    font-size: inherit;
     margin-top: -$line-spacing * 1em;
   }
 }
@@ -660,4 +703,32 @@ $mat-form-field-default-infix-width: 180px !default;
 /deep/ .mat-input-underline {
   background-color: rgb(47, 0, 255);    /* replace this color with your accent color hex code */
 width: 90%;
+}
+
+
+
+.demo-sidenav-area {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+
+  .mat-toolbar {
+    flex: 0;
+  }
+
+  .mat-sidenav-container {
+    flex: 1;
+  }
+
+  .demo-sidenav-content {
+    padding: 32px;
+  }
+
+  .demo-filler-content {
+    padding: 60px;
+  }
 }

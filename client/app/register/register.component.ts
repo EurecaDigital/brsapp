@@ -81,7 +81,7 @@ export class RegisterComponent implements OnInit {
   bairro = new FormControl('', [
     Validators.required
   ]);
-  cidade = new FormControl('', [
+  localidade = new FormControl('', [
     Validators.required
   ]);
   logradouro = new FormControl('', [
@@ -124,15 +124,15 @@ export class RegisterComponent implements OnInit {
       opiniao: this.opiniao,
       comentario: this.comentario,
       agradecimento: this.comentario,
-      Cep: {
-        cep: this.cep,
-        logradouro: this.logradouro,
-        numero: this.numero,
-        complemento: this.complemento,
-        bairro: this.bairro,
-        cidade: this.cidade,
-        uf: this.uf
-      }
+
+      cep: this.cep,
+      logradouro: this.logradouro,
+      numero: this.numero,
+      complemento: this.complemento,
+      bairro: this.bairro,
+      localidade: this.localidade,
+      uf: this.uf
+
     });
   }
 
