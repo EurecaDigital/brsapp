@@ -271,7 +271,7 @@ mat-card-actions {
     .mat-step-label,
     .mat-step-optional {
       color: mat-color($foreground, disabled-text);
-      font-size: 10px;
+      font-size: 12px;
     }
 
     .mat-step-icon {
@@ -282,7 +282,7 @@ mat-card-actions {
     .mat-step-icon-not-touched {
       background-color: mat-color($foreground, disabled-text);
       color: mat-color($primary, default-contrast);
-      font-size: 10px;
+      
     }
 
     .mat-step-label.mat-step-label-active {
@@ -318,10 +318,6 @@ mat-card-actions {
       font-size: 10px;
     };
   }
-
-  .div {
-    font-size: 10px;
-}
 
   .mat-step-label-selected {
     font: {
@@ -428,6 +424,7 @@ $mat-form-field-default-infix-width: 180px !default;
 
   /* To avoid problems with text-align.*/
   text-align: left;
+  font-size: 12px;
 
   [dir='rtl'] & {
     text-align: right;
@@ -452,7 +449,7 @@ $mat-form-field-default-infix-width: 180px !default;
 .mat-form-field-suffix {
   white-space: nowrap;
   flex: none;
-  font-size: inherit;
+  font-size: 12px;
 
   /*Allow icons in a prefix or suffix to adapt to the correct size.*/ 
   .mat-icon {
@@ -461,12 +458,9 @@ $mat-form-field-default-infix-width: 180px !default;
 
   /*Allow icon buttons in a prefix or suffix to adapt to the correct size.*/ 
   .mat-icon-button {
-    font: inherit;
+    font-size: 12px;
     vertical-align: baseline;
 
-    .mat-icon {
-      font-size: inherit;
-    }
   }
 }
 
@@ -474,7 +468,7 @@ $mat-form-field-default-infix-width: 180px !default;
   display: block;
   position: relative;
   flex: auto;
-  font-size: inherit;
+  font-size: 12px;
   min-width: 0;
   width: $mat-form-field-default-infix-width;
 }
@@ -487,7 +481,7 @@ $mat-form-field-default-infix-width: 180px !default;
   box-sizing: content-box;
   width: 100%;
   height: 100%;
-  font-size: inherit;
+  font-size: 12px;
   overflow: hidden;
   pointer-events: none;  // We shouldn't catch mouse events (let them through).
 }
@@ -500,7 +494,7 @@ $mat-form-field-default-infix-width: 180px !default;
   position: absolute;
   left: 0;
 
-  font: inherit;
+  font-size: 12px;
   pointer-events: none;  // We shouldn't catch mouse events (let them through).
 
   /*Put ellipsis text overflow.*/ 
@@ -531,7 +525,7 @@ $mat-form-field-default-infix-width: 180px !default;
 .mat-form-field-empty.mat-form-field-label,
 .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
   display: block;
-  font-size: inherit;
+  font-size: 12px;
 }
 
 /** Pseudo-class for Chrome and Safari auto-fill to move the label to the floating position.
@@ -606,7 +600,7 @@ $mat-form-field-default-infix-width: 180px !default;
       visibility: visible;
       opacity: 1;
       transform: scaleX(1);
-      font-size: inherit;
+      font-size: 12px;
       transition: transform 300ms $swift-ease-out-timing-function,
         opacity 100ms $swift-ease-out-timing-function,
         background-color 300ms $swift-ease-out-timing-function;
@@ -627,7 +621,6 @@ $mat-form-field-default-infix-width: 180px !default;
   .mat-icon {
     width: 1em;
     height: 1em;
-    font-size: inherit;
     vertical-align: baseline;
   }
 }
@@ -679,12 +672,12 @@ $mat-form-field-default-infix-width: 180px !default;
   .mat-warn .mat-input-element,
   .mat-form-field-invalid .mat-input-element {
     caret-color: mat-color($warn);
-    font-size: inherit;
+    font-size: 12px;
   }
 }
 
 @mixin mat-input-typography($config) {
-  font-size: inherit;
+  font-size: 12px;
   // The unit-less line-height from the font config.
   $line-height: mat-line-height($config, input);
 
@@ -732,3 +725,6 @@ width: 90%;
     padding: 60px;
   }
 }
+
+
+

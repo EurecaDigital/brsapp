@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
 
 import { CepService } from '../services/cep.service';
 import { UserService } from '../services/user.service';
+import { RegisterComponent } from "../register/register.component";
 import { ToastComponent } from '../shared/toast/toast.component';
 import { Cep } from "../services/cep";
 
@@ -15,13 +16,12 @@ import { Cep } from "../services/cep";
 
 export class CepComponent implements OnInit {
 
-
-
   isLoading = true;
   isEditing = false;
   isLinear = true;
 
   users = [];
+
   cepForm: FormGroup;
   cep = new FormControl('', [
     Validators.required
@@ -47,6 +47,7 @@ export class CepComponent implements OnInit {
 
   constructor(private cepService: CepService,
     private userService: UserService,
+    private registerComponent:RegisterComponent,
     private formBuilder: FormBuilder,
     public toast: ToastComponent) { }
 
@@ -66,12 +67,13 @@ export class CepComponent implements OnInit {
   }
 
   getCep(cep) {
-    console.log('teste:'+ cep);
+    console.log('Cep procurado:'+ cep);
     this.cepService.getCep(cep).subscribe(
-      data => this.cep = data,
+      data => this.cep = data,      
       error => console.log(error),
       () => this.isLoading = false
     );
+    
   }
 
 }

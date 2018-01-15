@@ -4,6 +4,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
+
 @Injectable()
 
 export class CepService {
@@ -14,25 +15,25 @@ export class CepService {
   constructor(private http: Http) { }
 
   getCep(cep): Observable<any> {
-    console.log('Cep pesquisado :' + cep);
+    console.log("Cep na URL:" + cep);
+    let apiURL = '//viacep.com.br/ws/' + cep + '/json';
 
-    return this.http
-      .get(`//viacep.com.br/ws/${cep}/json`)
-      .map(dados => dados.json());
-    this.populaCep(dados => dados.json())
-      
+    return this.http.get(apiURL)
+      .map(data => data.json());this.populaCep(data => data.json())
+    
   }
 
-  private populaCep(dados): Observable<any> {
-    let cep=dados.cep;
+  private populaCep(data): Observable<any> {
+    console.log("Cep na URL:" + data);
+    let cep = data;
 
-    cep.cep = dados.cep;
-    cep.logradouro = dados.logradouro;
-    cep.numero = dados.numero;
-    cep.complemento = dados.complemento;
-    cep.bairro = dados.bairro;
-    cep.localidade = dados.localidade;
-    cep.uf = dados.uf;
+    cep.cep = data.cep;
+    cep.logradouro = data.logradouro;
+    cep.numero = data.numero;
+    cep.complemento = data.complemento;
+    cep.bairro = data.baresponseirro;
+    cep.localidade = data.localidade;
+    cep.uf = data.uf;
     return cep;
   }
 
