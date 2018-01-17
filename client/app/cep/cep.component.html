@@ -1,117 +1,117 @@
 <mat-card>
-  <mat-card-content>
-
-    <form [formGroup]="cepForm">
-      <div flex fxLayout="row" fxLayout.lt-sm="column">
-        <div class="col-md-6 col-sm-12" fxFlex="50%">
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="cep"></mat-icon>Cep :{{ cep.cep }}</span>
-              
-            <input matInput placeholder='Cep' formControlName='cep' [(ngModel)]='cep.cep'>
-            <mat-error>*</mat-error>
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-sm-12" fxFlex="50%">
-          <div color="primary">
-            <button mat-button (click)="getCep(cep.cep)">Buscar : </button>
-           
+    <mat-card-content>
+  
+      <form [formGroup]="cepForm">
+        <div flex fxLayout="row" fxLayout.lt-sm="column">
+          <div class="col-md-6 col-sm-12" fxFlex="50%">
+            <mat-form-field>
+              <span>
+                <mat-icon [class.primary]="cep"></mat-icon>Cep :{{ cep.cep }}</span>
+                
+              <input matInput placeholder='Cep' formControlName='cep' [(ngModel)]='cep.cep'>
+              <mat-error>*</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12" fxFlex="50%">
+            <div color="primary">
+              <button mat-button (click)="getCep(cep.cep)">Buscar : </button>
+             
+            </div>
           </div>
         </div>
-      </div>
-
-      <div flex fxLayout="row" fxLayout.lt-sm="column">
-        <div class="col-md-6 col-sm-12" fxFlex="30%">
+  
+        <div flex fxLayout="row" fxLayout.lt-sm="column">
+          <div class="col-md-6 col-sm-12" fxFlex="30%">
+              <mat-form-field>
+                  <span>
+                    <mat-icon [class.primary]="localidade"></mat-icon>&nbsp;</span>
+                  <input matInput placeholder="Cidade" formControlName="localidade" [(ngModel)]="cep.localidade" [disabled]>
+                  <mat-error>*</mat-error>
+                </mat-form-field>
+          </div>
+  
+          <div class="col-md-6 col-sm-12" fxFlex="30%">
             <mat-form-field>
-                <span>
-                  <mat-icon [class.primary]="localidade"></mat-icon>&nbsp;</span>
-                <input matInput placeholder="Cidade" formControlName="localidade" [(ngModel)]="cep.localidade" [disabled]>
-                <mat-error>*</mat-error>
-              </mat-form-field>
+              <mat-select placeholder="Estado" [formControl]="uf"  [(ngModel)]="cep.uf" [disabled]>
+  
+  
+                <mat-option value="">Estados</mat-option>
+                <mat-option value="AC">AC</mat-option>
+                <mat-option value="AL">AL</mat-option>
+                <mat-option value="AM">AM</mat-option>
+                <mat-option value="AP">AP</mat-option>
+                <mat-option value="BA">BA</mat-option>
+                <mat-option value="CE">CE</mat-option>
+                <mat-option value="DF">DF</mat-option>
+                <mat-option value="ES">ES</mat-option>
+                <mat-option value="GO">GO</mat-option>
+                <mat-option value="MA">MA</mat-option>
+                <mat-option value="MG">MG</mat-option>
+                <mat-option value="MS">MS</mat-option>
+                <mat-option value="MT">MT</mat-option>
+                <mat-option value="PA">PA</mat-option>
+                <mat-option value="PB">PB</mat-option>
+                <mat-option value="PE">PE</mat-option>
+                <mat-option value="PI">PI</mat-option>
+                <mat-option value="PR">PR</mat-option>
+                <mat-option value="RJ">RJ</mat-option>
+                <mat-option value="RN">RN</mat-option>
+                <mat-option value="RS">RS</mat-option>
+                <mat-option value="RO">RO</mat-option>
+                <mat-option value="RR">RR</mat-option>
+                <mat-option value="SC">SC</mat-option>
+                <mat-option value="SE">SE</mat-option>
+                <mat-option value="SP">SP</mat-option>
+                <mat-option value="TO">TO</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12" fxFlex="30%">
+            <mat-form-field>
+              <span>
+                <mat-icon [class.primary]="logradouro"></mat-icon>&nbsp;</span>
+              <input matInput placeholder="Logradouro" formControlName="logradouro" [(ngModel)]="cep.logradouro" [disabled]>
+              <mat-error>*</mat-error>
+            </mat-form-field>
+          </div>
         </div>
-
-        <div class="col-md-6 col-sm-12" fxFlex="30%">
-          <mat-form-field>
-            <mat-select placeholder="Estado" [formControl]="uf"  [(ngModel)]="cep.uf" [disabled]>
-
-
-              <mat-option value="">Estados</mat-option>
-              <mat-option value="AC">AC</mat-option>
-              <mat-option value="AL">AL</mat-option>
-              <mat-option value="AM">AM</mat-option>
-              <mat-option value="AP">AP</mat-option>
-              <mat-option value="BA">BA</mat-option>
-              <mat-option value="CE">CE</mat-option>
-              <mat-option value="DF">DF</mat-option>
-              <mat-option value="ES">ES</mat-option>
-              <mat-option value="GO">GO</mat-option>
-              <mat-option value="MA">MA</mat-option>
-              <mat-option value="MG">MG</mat-option>
-              <mat-option value="MS">MS</mat-option>
-              <mat-option value="MT">MT</mat-option>
-              <mat-option value="PA">PA</mat-option>
-              <mat-option value="PB">PB</mat-option>
-              <mat-option value="PE">PE</mat-option>
-              <mat-option value="PI">PI</mat-option>
-              <mat-option value="PR">PR</mat-option>
-              <mat-option value="RJ">RJ</mat-option>
-              <mat-option value="RN">RN</mat-option>
-              <mat-option value="RS">RS</mat-option>
-              <mat-option value="RO">RO</mat-option>
-              <mat-option value="RR">RR</mat-option>
-              <mat-option value="SC">SC</mat-option>
-              <mat-option value="SE">SE</mat-option>
-              <mat-option value="SP">SP</mat-option>
-              <mat-option value="TO">TO</mat-option>
-            </mat-select>
-          </mat-form-field>
+  
+        <div flex fxLayout="row" fxLayout.lt-sm="column">
+          <div class="col-md-6 col-sm-12" fxFlex="30%">
+            <mat-form-field>
+              <span>
+                <mat-icon [class.primary]="numero"></mat-icon>&nbsp;</span>
+              <input matInput placeholder="Número" formControlName="numero" [(ngModel)]="cep.numero" required>
+              <mat-error>*</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12" fxFlex="30%">
+            <mat-form-field>
+              <span>
+                <mat-icon [class.primary]="complemento"></mat-icon>&nbsp;</span>
+              <input matInput placeholder="Complemento" formControlName="complemento" [(ngModel)]="cep.complemento" required>
+              <mat-error>*</mat-error>
+              <mat-error>*</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6 col-sm-12" fxFlex="30%">
+            <mat-form-field>
+              <span>
+                <mat-icon [class.primary]="bairro"></mat-icon>&nbsp;</span>
+              <input matInput placeholder="Bairro" formControlName="bairro" [(ngModel)]="cep.bairro" required>
+              <mat-error>*</mat-error>
+              <mat-error>*</mat-error>
+            </mat-form-field>
+          </div>
         </div>
-        <div class="col-md-6 col-sm-12" fxFlex="30%">
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="logradouro"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Logradouro" formControlName="logradouro" [(ngModel)]="cep.logradouro" [disabled]>
-            <mat-error>*</mat-error>
-          </mat-form-field>
+  
+        <div>
+          <button mat-button matStepperPrevious>Voltar</button>
+          <button mat-button matStepperNext>Próximo</button>
         </div>
-      </div>
-
-      <div flex fxLayout="row" fxLayout.lt-sm="column">
-        <div class="col-md-6 col-sm-12" fxFlex="30%">
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="numero"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Número" formControlName="numero" [(ngModel)]="cep.numero" required>
-            <mat-error>*</mat-error>
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-sm-12" fxFlex="30%">
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="complemento"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Complemento" formControlName="complemento" [(ngModel)]="cep.complemento" required>
-            <mat-error>*</mat-error>
-            <mat-error>*</mat-error>
-          </mat-form-field>
-        </div>
-        <div class="col-md-6 col-sm-12" fxFlex="30%">
-          <mat-form-field>
-            <span>
-              <mat-icon [class.primary]="bairro"></mat-icon>&nbsp;</span>
-            <input matInput placeholder="Bairro" formControlName="bairro" [(ngModel)]="cep.bairro" required>
-            <mat-error>*</mat-error>
-            <mat-error>*</mat-error>
-          </mat-form-field>
-        </div>
-      </div>
-
-      <div>
-        <button mat-button matStepperPrevious>Voltar</button>
-        <button mat-button matStepperNext>Próximo</button>
-      </div>
-
-
-    </form>
-
-  </mat-card-content>
-</mat-card>
+  
+  
+      </form>
+  
+    </mat-card-content>
+  </mat-card>

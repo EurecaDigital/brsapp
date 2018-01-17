@@ -5,8 +5,6 @@ import { CepService } from '../services/cep.service';
 import { UserService } from '../services/user.service';
 import { RegisterComponent } from "../register/register.component";
 import { ToastComponent } from '../shared/toast/toast.component';
-import { Cep } from "../services/cep";
-
 
 @Component({
   selector: 'app-cep',
@@ -15,6 +13,14 @@ import { Cep } from "../services/cep";
 })
 
 export class CepComponent implements OnInit {
+  numero: FormControl;
+  uf: FormControl;
+  complemento: FormControl;
+  logradouro: FormControl;
+  localidade: FormControl;
+  bairro: FormControl;
+  cepForm: any;
+  cep: any;
 
   isLoading = true;
   isEditing = false;
@@ -22,39 +28,40 @@ export class CepComponent implements OnInit {
 
   users = [];
 
-  cepForm: FormGroup;
-  cep = new FormControl('', [
-    Validators.required
-  ]);
-  bairro = new FormControl('', [
-    Validators.required
-  ]);
-  localidade = new FormControl('', [
-    Validators.required
-  ]);
-  logradouro = new FormControl('', [
-    Validators.required
-  ]);
-  complemento = new FormControl('', [
-    Validators.required
-  ]);
-  uf = new FormControl('', [
-    Validators.required
-  ]);
-  numero = new FormControl('', [
-    Validators.required
-  ]);
-
   constructor(private cepService: CepService,
     private userService: UserService,
-    private registerComponent:RegisterComponent,
+    private registerComponent: RegisterComponent,
     private formBuilder: FormBuilder,
-    public toast: ToastComponent) { }
+    public toast: ToastComponent) {
+
+    this.cepForm= FormGroup;
+    this.cep = new FormControl('', [
+      Validators.required
+    ]);
+    this.bairro = new FormControl('', [
+      Validators.required
+    ]);
+    this.localidade = new FormControl('', [
+      Validators.required
+    ]);
+    this.logradouro = new FormControl('', [
+      Validators.required
+    ]);
+    this.complemento = new FormControl('', [
+      Validators.required
+    ]);
+    this.uf = new FormControl('', [
+      Validators.required
+    ]);
+    this.numero = new FormControl('', [
+      Validators.required
+    ]);
+  }
 
 
 
   ngOnInit() {
-    
+
     this.cepForm = this.formBuilder.group({
       cep: this.cep,
       logradouro: this.logradouro,
@@ -67,13 +74,13 @@ export class CepComponent implements OnInit {
   }
 
   getCep(cep) {
-    console.log('Cep procurado:'+ cep);
+    console.log('Cep procurado:' + cep);
     this.cepService.getCep(cep).subscribe(
-      data => this.cep = data,      
+      data => this.cep = data,
       error => console.log(error),
       () => this.isLoading = false
     );
-    
+
   }
 
 }

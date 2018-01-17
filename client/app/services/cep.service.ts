@@ -13,14 +13,12 @@ export class CepService {
   private options = new RequestOptions({ headers: this.headers });
 
   constructor(private http: Http) { }
-
   getCep(cep): Observable<any> {
-    console.log("Cep na URL:" + cep);
     let apiURL = '//viacep.com.br/ws/' + cep + '/json';
-
     return this.http.get(apiURL)
-      .map(data => data.json());this.populaCep(data => data.json())
-    
+      .map((data => data.json()),
+      this.populaCep(data => data.json())      
+      );
   }
 
   private populaCep(data): Observable<any> {

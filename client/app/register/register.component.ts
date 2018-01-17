@@ -2,19 +2,30 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { UserService } from '../services/user.service';
-import { CepService } from "../services/cep.service";
+
 import { CepComponent } from "../cep/cep.component";
 import { ToastComponent } from '../shared/toast/toast.component';
+
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html'
 })
+
+
 export class RegisterComponent implements OnInit {
 
   isLinear = true;
 
   registerForm: FormGroup;
+  cep = new FormControl('', [Validators.required]);
+  bairro = new FormControl('', [Validators.required]);
+  localidade = new FormControl('', [Validators.required]);
+  logradouro = new FormControl('', [Validators.required]);
+  complemento = new FormControl('', [Validators.required]);
+  uf = new FormControl('', [Validators.required]);
+  numero = new FormControl('', [Validators.required]);
+
   username = new FormControl('', [
     Validators.required,
     Validators.minLength(2),
@@ -75,36 +86,16 @@ export class RegisterComponent implements OnInit {
   agradecimento = new FormControl('', [
     Validators.required
   ]);
-  cep = new FormControl('', [
-    Validators.required
-  ]);
-  bairro = new FormControl('', [
-    Validators.required
-  ]);
-  localidade = new FormControl('', [
-    Validators.required
-  ]);
-  logradouro = new FormControl('', [
-    Validators.required
-  ]);
-  complemento = new FormControl('', [
-    Validators.required
-  ]);
-  uf = new FormControl('', [
-    Validators.required
-  ]);
-  numero = new FormControl('', [
-    Validators.required
-  ]);
 
   constructor(private formBuilder: FormBuilder,
-    private cepService: CepService,
     private router: Router,
     public toast: ToastComponent,
     private userService: UserService) { }
 
   ngOnInit() {
+    
     this.registerForm = this.formBuilder.group({
+      cep: this.cep,      
       username: this.username,
       email: this.email,
       password: this.password,
@@ -123,16 +114,7 @@ export class RegisterComponent implements OnInit {
       duvidasii: this.duvidasii,
       opiniao: this.opiniao,
       comentario: this.comentario,
-      agradecimento: this.comentario,
-
-      cep: this.cep,
-      logradouro: this.logradouro,
-      numero: this.numero,
-      complemento: this.complemento,
-      bairro: this.bairro,
-      localidade: this.localidade,
-      uf: this.uf
-
+      agradecimento: this.comentario
     });
   }
 
