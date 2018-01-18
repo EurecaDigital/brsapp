@@ -5,7 +5,7 @@
 
     <mat-sidenav-container class="all-wrap" fullscreen>
       <mat-sidenav #sidenav>
-        <mat-toolbar color="primary" opened="false">
+        <mat-toolbar color="primary">
 
           <section>
             <a href="#">
@@ -30,7 +30,7 @@
 
       <div class="page-wrap">
         <header role="banner">
-          <mat-toolbar color="accent">
+          <mat-toolbar color="accent" style="color:#000000">
             <button type="button" mat-icon-button (click)="sidenav.open()" title="Open sidenav" fxHide="false" fxHide.gt-sm>
               <mat-icon class="mat-icon">menu</mat-icon>
             </button>
@@ -106,7 +106,7 @@
 
         </main>
         <footer>
-          <span style="text-align: center">&nbsp; 2017 Bairro Social V/span>0.1.</span>
+          <span style="text-align: center">&nbsp; 2017 Bairro Social V0.1.</span>
         </footer>
       </div>
     </mat-sidenav-container>
@@ -117,32 +117,3 @@
 
   <!--/.toolbar -->
 
-
-
-  <!--div class="container">
-    <div fxLayout="row" fxLayoutAlign="start center" class="content">
-      <div class="blocks" fxFlex="20%">1</div>
-      <div class="blocks" fxFlex="60%">2</div>
-      <div class="blocks" fxFlex>3</div>
-    </div>
-  </div>
-  <div class="container">
-    <div fxLayout="row" fxLayoutAlign="space-around center" class="content">
-      <div class="blocks">1</div>
-      <div class="blocks">2</div>
-      <div class="blocks">3</div>
-    </div>
-  </div>
-  <div class="container">
-    <div fxLayout="row" fxLayoutAlign="begin center" class="content">
-      <div class="blocks">1</div>
-      <div class="blocks">2</div>
-      <div class="blocks">3</div>
-    </div>
-  </div>
-  <div class="container">
-    <div fxLayout="row" fxLayout.xs="column" fxLayout.sm="column" fxFlex class="contentResp">
-      <div class="blocks" fxFlex> I'm above on mobile, and to the left on larger devices. </div>
-      <div class="blocks" fxFlex> I'm below on mobile, and to the right on larger devices. </div>
-    </div>
-  </div-->

@@ -41,8 +41,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule, MatInputModule } from "@angular/material"; 
 import { MatGridListModule } from "@angular/material"; 
-
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioButton } from '@angular/material/radio';
+ 
 /*
 import { ObserversModule } from '@angular/cdk/observers';
 import { OverlayModule } from '@angular/cdk/overlay';
@@ -51,8 +54,7 @@ import { BidiModule } from '@angular/cdk/bidi';
 import { PortalModule } from '@angular/cdk/portal';
 import { MatCommonModule, MatRippleModule } from '@angular/material/core';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatRadioButton } from '@angular/material/radio';
+
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSliderModule } from '@angular/material/slider';
@@ -60,12 +62,12 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatChipsModule } from '@angular/material/chips'; 
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material';
-import { MatTooltipModule } from '@angular/material/tooltip';
+
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -73,7 +75,7 @@ import { MatExpansionPanel } from '@angular/material';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 import '@angular/material/core/theming/prebuilt/deeppurple-amber.css
 */ 
@@ -91,7 +93,11 @@ const MATERIAL_MODULES = [
   MatStepperModule,
   MatFormFieldModule,
   MatGridListModule,
-  MatInputModule
+  MatInputModule,
+  MatProgressSpinnerModule,
+  MatTooltipModule,
+  MatCheckboxModule
+  
   
   /* 
    MatAutocompleteModule,

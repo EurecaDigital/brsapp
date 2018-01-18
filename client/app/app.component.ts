@@ -6,6 +6,7 @@ import { MatSidenav } from '@angular/material';
 import { SidenavService } from './services/sidenav.service';
 import { CatService } from './services/cat.service';
 import { CepService } from './services/cep.service';
+import { SharedModule } from "./shared/shared.module";
 
 import { Subscription } from 'rxjs/Subscription';
 import { ObservableMedia, MediaChange } from '@angular/flex-layout';

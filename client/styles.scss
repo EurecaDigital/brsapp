@@ -143,6 +143,12 @@ main {
  }
 }
 
+.gradiente-conteiner{
+  background: #FF8008;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #FFC837, #FF8008);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #FFC837, #FF8008); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+}
 .example-container {
   display: flex;
   flex-direction: column;
@@ -172,9 +178,17 @@ main {
 }
 
 mat-card {
-  margin: 15px;
+  margin: 0px;
   font-size: 10px;
+  width: 100%;
 }
+
+.mat-card-content-about {
+  height: 100%;
+  width: 90%;
+  padding-top:10%;  
+}
+
 mat-card-title {
   margin-bottom: 50px;
 }
@@ -716,6 +730,8 @@ width: 90%;
     padding: 60px;
   }
 }
+
+
 
 
 
