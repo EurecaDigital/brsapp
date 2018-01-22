@@ -45,6 +45,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioButton } from '@angular/material/radio';
+import { MatTableModule } from '@angular/material/table';
  
 /*
 import { ObserversModule } from '@angular/cdk/observers';
@@ -72,7 +73,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatExpansionPanel } from '@angular/material';
-import { MatTableModule } from '@angular/material/table';
+
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
@@ -96,7 +97,8 @@ const MATERIAL_MODULES = [
   MatInputModule,
   MatProgressSpinnerModule,
   MatTooltipModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatTableModule
   
   
   /* 

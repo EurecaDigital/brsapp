@@ -2,12 +2,6 @@
 
 <app-toast [message]="toast.message"></app-toast>
 
-  <mat-grid-list cols="3" rowHeight="2:1">
-    <mat-grid-tile>Nome</mat-grid-tile>
-    <mat-grid-tile>Email</mat-grid-tile>
-    <mat-grid-tile>Tipo de usuário</mat-grid-tile>
-
-
 <div class="card" *ngIf="!isLoading">
   <h4 class="card-header">Registered users ({{users.length}})</h4>
   <div class="card-block">
